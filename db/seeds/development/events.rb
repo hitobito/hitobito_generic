@@ -1,4 +1,4 @@
-course_group_ids = Group.where(type: [Group::Layer].map(&:sti_name)).order(:name).pluck(:id)
+course_group_ids = Group.where(type: [Group::TopLayer, Group::Layer].map(&:sti_name)).order(:name).pluck(:id)
 @@kinds = Event::Kind.order(:label)
 @@people_count = Person.count
 @@conditions = {}

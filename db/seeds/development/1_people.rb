@@ -1,5 +1,5 @@
 
-@encrypted_password = BCrypt::Password.create("password", cost: 1)
+@encrypted_password = BCrypt::Password.create("hito42bito", cost: 1)
 
 def amount(role_type)
   case role_type.name.demodulize
