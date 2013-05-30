@@ -1,0 +1,7 @@
+.bundle/
+log/*.log
+pkg/
+doc/rdoc
+spec/coverage
+Gemfile.lock
+.sass-cache

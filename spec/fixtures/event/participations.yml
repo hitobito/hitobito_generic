@@ -1,0 +1,20 @@
+top_leader:
+  event: top_course
+  person: board_leader
+  active: true
+
+top_participant:
+  event: top_course
+  person: basic_leader
+  active: true
+  application: top_participant
+
+camp_leader:
+  event: top_event
+  person: basic_leader
+  active: true
+
+camp_participant:
+  event: top_event
+  person: basic_member
+  active: true

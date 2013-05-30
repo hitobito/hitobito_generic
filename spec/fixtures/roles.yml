@@ -1,0 +1,19 @@
+admin:
+  person: admin
+  group: ch
+  type: Group::TopLayer::Administrator
+
+board_leader:
+  person: board_leader
+  group: be_board
+  type: Group::Board::Leader
+
+basic_leader:
+  person: basic_leader
+  group: innerroden
+  type: Group::Basic::Leader
+
+basic_member:
+  person: basic_member
+  group: innerroden
+  type: Group::Basic::Member

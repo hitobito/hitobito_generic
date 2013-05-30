@@ -1,0 +1,26 @@
+admin:
+  first_name: Top
+  last_name: Administrator
+  email: top.admin@example.com
+
+board_leader:
+  first_name: Board
+  last_name: Leader
+  email: board.leader@example.com
+  contact_data_visible: true
+
+basic_leader:
+  first_name: Basic
+  last_name: Leader
+  email: basic.leader@example.com
+  contact_data_visible: true
+
+basic_member:
+  first_name: Basic
+  last_name: Member
+  email: basic.member@example.com
+
+root:
+  company_name: 'Puzzle ITC'
+  company: true
+  email: <%= Settings.root_email %>

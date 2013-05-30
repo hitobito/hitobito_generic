@@ -1,0 +1,145 @@
+ch:
+  name: Verband
+  short_name: Verband
+  type: Group::TopLayer
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:ch) %>
+  lft: 1
+  rgt: 36
+
+federal_board:
+  name: Verbandsleitung
+  type: Group::Board
+  parent: ch
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:ch) %>
+  lft: 2
+  rgt: 3
+
+be:
+  name: Region Bern
+  short_name: BE
+  parent: ch
+  type: Group::Layer
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:be) %>
+  lft: 4
+  rgt: 27
+
+be_board:
+  name: Vorstand Bern
+  parent: be
+  type: Group::Board
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:be) %>
+  lft: 5
+  rgt: 6
+
+be_security:
+  name: FG Sicherheit
+  parent: be
+  type: Group::Basic
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:be) %>
+  lft: 7
+  rgt: 8
+
+be_state_camp:
+  name: AG Kantonslager
+  parent: be
+  type: Group::Basic
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:be) %>
+  lft: 9
+  rgt: 10
+
+"no":
+  name: Nordostschweiz
+  short_name: NO
+  parent: ch
+  type: Group::Layer
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:no) %>
+  lft: 28
+  rgt: 35
+
+no_board:
+  name: Vorstand NO
+  parent: "no"
+  type: Group::Board
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:no) %>
+  lft: 29
+  rgt: 30
+
+bern:
+  name: Stadt Bern
+  parent: be
+  type: Group::Layer
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:bern) %>
+  lft: 11
+  rgt: 20
+
+bern_board:
+  name: Vorstand Stadt Bern
+  parent: bern
+  type: Group::Board
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:bern) %>
+  lft: 12
+  rgt: 13
+
+thun:
+  name: Thun
+  parent: be
+  type: Group::Layer
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:thun) %>
+  lft: 21
+  rgt: 26
+
+thun_board:
+  name: Vorstand Thun
+  parent: thun
+  type: Group::Board
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:thun) %>
+  lft: 22
+  rgt: 23
+
+asterix:
+  name: Asterix
+  parent: bern
+  type: Group::Basic
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:bern) %>
+  lft: 14
+  rgt: 17
+
+obelix:
+  name: Obelix
+  parent: bern
+  type: Group::Basic
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:bern) %>
+  lft: 18
+  rgt: 19
+
+fussball:
+  name: Fussballgruppe
+  parent: asterix
+  type: Group::Basic
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:bern) %>
+  lft: 15
+  rgt: 16
+
+mickey:
+  name: Mickey
+  parent: thun
+  type: Group::Basic
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:thun) %>
+  lft: 24
+  rgt: 25
+
+innerroden:
+  name: Innerroden
+  parent: "no"
+  type: Group::Layer
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:innerroden) %>
+  lft: 31
+  rgt: 32
+
+ausserroden:
+  name: Ausserroden
+  parent: "no"
+  type: Group::Layer
+  layer_group_id: <%= ActiveRecord::Fixtures.identify(:ausserroden) %>
+  lft: 33
+  rgt: 34
