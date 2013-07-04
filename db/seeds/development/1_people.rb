@@ -66,6 +66,12 @@ def seed_accounts(person, several = false)
   end
 end
 
+def seed_role(person, group, role_type)
+  Role.seed_once(:person_id, :group_id, :type, { person_id: person.id,
+                                                 group_id:  group.id,
+                                                 type:      role_type.name })
+end
+
 Group.root.self_and_descendants.each do |group|
   group.role_types.reject(&:restricted).each do |role_type|
     # set random seed to get the same names over various runs
@@ -76,12 +82,7 @@ Group.root.self_and_descendants.each do |group|
     count.times do
       p = Person.seed(:email, person_attributes(role_type)).first
       seed_accounts(p, count == 1)
-      Role.seed_once(:person_id, :group_id, :type,
-       { person_id: p.id,
-         group_id:  group.id,
-         type:      role_type.name
-       }
-      )
+      seed_role(p, group, role_type)
     end
   end
 end
@@ -111,3 +112,22 @@ devs.each do |name, email|
   role_attrs = { person_id: person.id, group_id: bula.id, type: Group::Board::Leader.name }
   Role.seed_once(*role_attrs.keys, role_attrs)
 end
+
+@demo_password = BCrypt::Password.create("demo", cost: 1)
+def seed_demo_person(email, group, role_type)
+  attrs = person_attributes(role_type).merge(email: email,
+                                             encrypted_password: @demo_password)
+  person = Person.seed_once(:email, attrs).first
+  if person
+    seed_accounts(person, false)
+    seed_role(person, group, role_type)
+  end
+end
+
+top = Group.root
+bern = Group.find_by_name('Region Bern')
+donald = Group.find_by_name('Donald')
+
+seed_demo_person('hitobito-admin@puzzle.ch', top, Group::TopLayer::Administrator)
+seed_demo_person('hitobito-leitung@puzzle.ch', bern, Group::Layer::Leader)
+seed_demo_person('hitobito-mitglied@puzzle.ch', donald, Group::Basic::Member)
