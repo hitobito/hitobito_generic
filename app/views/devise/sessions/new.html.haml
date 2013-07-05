@@ -2,11 +2,13 @@
 
 .alert.alert-info
   %h2 hitobito Demo
-  %p Du kannst dich mit den folgenden Emailadressen anmelden
+  %p Du kannst dich mit den folgenden Emailadressen anmelden.
   %ul
-    %li hitobito-admin@puzzle.ch (passwort: demo) Administrator mit vollem Zugriff
-    %li hitobito-leitung@puzzle.ch (passwort: demo) Rolle Leitung einer lokalen Gruppe
-    %li hitobito-mitglied@puzzle.ch (passwort: demo) Gruppenmitglied
+    %li admin@hitobito.ch (passwort: demo) Administrator mit vollem Zugriff
+    %li leitung@hitobito.ch (passwort: demo) Rolle Leitung einer lokalen Gruppe
+    %li mitglied@hitobito.ch (passwort: demo) Gruppenmitglied
+  %br
+  %p Bei Fragen wende dich an #{mail_to('hitobito@puzzle.ch')}.
 
 = standard_form(resource, {url: person_session_path}) do |f|
   = f.error_messages

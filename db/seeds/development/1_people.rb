@@ -92,6 +92,7 @@ puzzlers = ['Pascal Zumkehr',
             'Pascal Simon',
             'Pierre Fritsch',
             'Andreas Maierhofer',
+            'Andre Kunz',
             'Roland Studer']
 devs = {'Somebody' => 'some@email.example.com'}
 
@@ -128,6 +129,6 @@ top = Group.root
 bern = Group.find_by_name('Region Bern')
 donald = Group.find_by_name('Donald')
 
-seed_demo_person('hitobito-admin@puzzle.ch', top, Group::TopLayer::Administrator)
-seed_demo_person('hitobito-leitung@puzzle.ch', bern, Group::Layer::Leader)
-seed_demo_person('hitobito-mitglied@puzzle.ch', donald, Group::Basic::Member)
+seed_demo_person('admin@hitobito.ch', top, Group::TopLayer::Administrator)
+seed_demo_person('leitung@hitobito.ch', bern, Group::Layer::Leader)
+seed_demo_person('mitglied@hitobito.ch', donald, Group::Basic::Member)
