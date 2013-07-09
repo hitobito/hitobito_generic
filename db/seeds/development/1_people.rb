@@ -69,7 +69,7 @@ end
 def seed_role(person, group, role_type)
   Role.seed_once(:person_id, :group_id, :type, { person_id: person.id,
                                                  group_id:  group.id,
-                                                 type:      role_type.name })
+                                                 type:      role_type.sti_name })
 end
 
 Group.root.self_and_descendants.each do |group|
@@ -101,7 +101,7 @@ puzzlers.each do |puz|
 end
 
 
-bula = Group.root.children.where(type: Group::Board.sti_name).first
+bula = Group.root
 devs.each do |name, email|
   first, last = name.split
   attrs = { email: email,
@@ -110,7 +110,7 @@ devs.each do |name, email|
             encrypted_password: @encrypted_password }
   Person.seed_once(:email, attrs)
   person = Person.find_by_email(attrs[:email])
-  role_attrs = { person_id: person.id, group_id: bula.id, type: Group::Board::Leader.name }
+  role_attrs = { person_id: person.id, group_id: bula.id, type: Group::TopLayer::Administrator.sti_name }
   Role.seed_once(*role_attrs.keys, role_attrs)
 end
 
@@ -121,7 +121,7 @@ def seed_demo_person(email, group, role_type)
   Person.seed_once(:email, attrs)
   person = Person.find_by_email(attrs[:email])
   # reset demo password
-  person.update_column(encrypted_password: @demo_password)
+  person.update_column(:encrypted_password, @demo_password)
   seed_accounts(person, false)
   seed_role(person, group, role_type)
 end
