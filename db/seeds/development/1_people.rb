@@ -118,11 +118,12 @@ end
 def seed_demo_person(email, group, role_type)
   attrs = person_attributes(role_type).merge(email: email,
                                              encrypted_password: @demo_password)
-  person = Person.seed_once(:email, attrs).first
-  if person
-    seed_accounts(person, false)
-    seed_role(person, group, role_type)
-  end
+  Person.seed_once(:email, attrs)
+  person = Person.find_by_email(attrs[:email])
+  # reset demo password
+  person.update_column(encrypted_password: @demo_password)
+  seed_accounts(person, false)
+  seed_role(person, group, role_type)
 end
 
 top = Group.root

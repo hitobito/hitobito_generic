@@ -1,14 +1,18 @@
 -title 'Anmelden'
 
 .alert.alert-info
-  %h2 hitobito Demo
-  %p Du kannst dich mit den folgenden Emailadressen anmelden.
+  %h2 Demo Version
+  %p Du kannst dich mit den folgenden E-Mail-Adressen anmelden.
   %ul
-    %li admin@hitobito.ch (passwort: demo) Administrator mit vollem Zugriff
-    %li leitung@hitobito.ch (passwort: demo) Rolle Leitung einer lokalen Gruppe
-    %li mitglied@hitobito.ch (passwort: demo) Gruppenmitglied
+    %li admin@hitobito.ch (passwort: demo) - Administrator mit vollem Zugriff
+    %li leitung@hitobito.ch (passwort: demo) - Rolle Leitung einer lokalen Gruppe
+    %li mitglied@hitobito.ch (passwort: demo) - Gruppenmitglied
   %br
+  %p
+    Die Demo-Daten werden jeden Abend neu eingespielt. Falls du Probleme mit dem Login hast,
+    wende dich an André Kunz (#{mail_to('kunz@puzzle.ch')}).
   %p Bei Fragen wende dich an #{mail_to('hitobito@puzzle.ch')}.
+
 
 = standard_form(resource, {url: person_session_path}) do |f|
   = f.error_messages
