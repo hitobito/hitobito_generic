@@ -6,25 +6,25 @@ This hitobito wagon defines a basic generic organization hierarchy.
 
 === Organization Hierarchy
 
-   * Hauptebene
-      * Hauptebene
-         * Administrator: [:admin, :layer_full]
-         * Leitung: [:layer_full, :contact_data, :qualify, :approve_applications]
-         * Mitglied: [:layer_read, :contact_data]
-   * Ebene
-      * Ebene
-         * Leitung: [:layer_full, :contact_data, :qualify, :approve_applications]
-         * Mitglied: [:layer_read, :contact_data]
-   * Global
-      * Basisgruppe
-         * Leitung: [:group_full, :contact_data]
-         * Mitglied: [:group_read]
-      * Vorstand
-         * Leitung: [:layer_full, :contact_data, :qualify, :approve_applications]
-         * Mitglied: [:layer_read, :contact_data]
-      * Global
-         * Adressverwaltung: [:group_full]
-         * Versandadresse: []
-         * Extern: []
+* Hauptebene
+  * Hauptebene
+    * Administrator: [:admin, :layer_full]
+    * Leitung: [:layer_full, :contact_data, :qualify, :approve_applications]
+    * Mitglied: [:layer_read, :contact_data]
+* Ebene
+  * Ebene
+    * Leitung: [:layer_full, :contact_data, :qualify, :approve_applications]
+    * Mitglied: [:layer_read, :contact_data]
+* Global
+  * Basisgruppe
+    * Leitung: [:group_full, :contact_data]
+    * Mitglied: [:group_read]
+  * Vorstand
+    * Leitung: [:layer_full, :contact_data, :qualify, :approve_applications]
+    * Mitglied: [:layer_read, :contact_data]
+  * Global
+    * Adressverwaltung: [:group_full]
+    * Versandadresse: []
+    * Extern: []
 
 (Output of rake hitobito:permissions)
