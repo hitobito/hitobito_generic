@@ -2,6 +2,13 @@
 log/*.log
 pkg/
 doc/rdoc
-spec/coverage
-Gemfile.lock
 .sass-cache
+
+# ignore Gemfile.lock for wagons
+Gemfile.lock
+
+# reports
+spec/coverage
+spec/reports
+brakeman-output.tabs
+rubocop-results.xml
