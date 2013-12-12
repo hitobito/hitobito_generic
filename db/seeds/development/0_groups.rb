@@ -5,6 +5,9 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_generic.
 
+
+Faker::Config.locale = I18n.locale
+
 ch = Group.roots.first
 srand(42)
 
