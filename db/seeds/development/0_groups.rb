@@ -5,25 +5,17 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_generic.
 
+require Rails.root.join('db', 'seeds', 'support', 'group_seeder')
 
-Faker::Config.locale = I18n.locale
+seeder = GroupSeeder.new
 
 ch = Group.roots.first
 srand(42)
 
-def contacts
-  { short_name: ('A'..'Z').to_a.sample(2).join,
-    address: Faker::Address.street_address,
-    zip_code: Faker::Address.zip,
-    town: Faker::Address.city,
-    email: Faker::Internet.safe_email
-  }
-end
-
 unless ch.address.present?
-  ch.update_attributes(contacts)
+  ch.update_attributes(seeder.group_attributes)
   ch.default_children.each do |child_class|
-    child_class.first.update_attributes(contacts)
+    child_class.first.update_attributes(seeder.group_attributes)
   end
 end
 
@@ -62,23 +54,9 @@ states = Group::Layer.seed(:name, :parent_id,
 )
 
 states.each do |s|
-  SocialAccount.seed(:contactable_id, :contactable_type, :name,
-    { contactable_id:   s.id,
-      contactable_type: 'Group',
-      name:             "#{s.name.downcase.split(' ').last}@hitobito.example.com",
-      label:            'E-Mail',
-      public:           true }
-  )
-
-  PhoneNumber.seed(:contactable_id, :contactable_type, :number,
-    { contactable_id:   s.id,
-      contactable_type: 'Group',
-      number:           Faker::PhoneNumber.phone_number,
-      label:            Settings.phone_number.predefined_labels.first,
-      public:           true }
-  )
-  ast = s.children.where(type: 'Group::Board').first
-  ast.update_attributes(contacts)
+  seeder.seed_social_accounts(s)
+  board = s.children.where(type: 'Group::Board').first
+  board.update_attributes(seeder.group_attributes)
 end
 
 Group::Basic.seed(:name, :parent_id,
@@ -91,37 +69,23 @@ Group::Basic.seed(:name, :parent_id,
 
 clubs = Group::Layer.seed(:name, :parent_id,
   {name: 'Verein Stadt',
-   parent_id: states[0].id }.merge(contacts),
+   parent_id: states[0].id }.merge(seeder.group_attributes),
 
   {name: 'Verein Oberland',
-   parent_id: states[0].id }.merge(contacts),
+   parent_id: states[0].id }.merge(seeder.group_attributes),
 
   {name: 'Verein Jura',
-   parent_id: states[0].id }.merge(contacts),
+   parent_id: states[0].id }.merge(seeder.group_attributes),
 
   {name: 'Verein Stadt',
-   parent_id: states[1].id }.merge(contacts),
+   parent_id: states[1].id }.merge(seeder.group_attributes),
 
   {name: 'Verein Oberland',
-   parent_id: states[1].id }.merge(contacts),
+   parent_id: states[1].id }.merge(seeder.group_attributes),
 )
 
 clubs.each do |s|
-  SocialAccount.seed(:contactable_id, :contactable_type, :label,
-    { contactable_id:   s.id,
-      contactable_type: 'Group',
-      name:             "#{s.name.downcase.split(' ').last}@hitobito.example.com",
-      label:            'E-Mail',
-      public:           true }
-  )
-
-  PhoneNumber.seed(:contactable_id, :contactable_type, :label,
-    { contactable_id:   s.id,
-      contactable_type: 'Group',
-      number:           Faker::PhoneNumber.phone_number,
-      label:            Settings.phone_number.predefined_labels.first,
-      public:           true },
-  )
+  seeder.seed_social_accounts(s)
 end
 
 basics = Group::Basic.seed(:name, :parent_id,
