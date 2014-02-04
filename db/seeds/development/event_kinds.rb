@@ -5,24 +5,49 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_generic.
 
-quali_kinds = QualificationKind.seed(:label,
- {label: 'Leitung',
-  validity: 2},
+quali_kinds = QualificationKind.seed(:id,
+ {id: 1,
+  validity: 2,
+  reactivateable: 2},
 
- {label: 'Experte',
+ {id: 2,
   validity: 2},
 )
 
-Event::Kind.seed(:short_name,
- {label: 'Leitungskurs',
-  short_name: 'LK',
+QualificationKind::Translation.seed(:qualification_kind_id, :locale,
+  {qualification_kind_id: quali_kinds[0].id,
+   locale: 'de',
+   label: 'Leitung'},
+
+  {qualification_kind_id: quali_kinds[1].id,
+   locale: 'de',
+   label: 'Experte'},
+)
+
+event_kinds = Event::Kind.seed(:id,
+ {id: 1,
   qualification_kind_ids: [quali_kinds[0].id]},
 
- {label: 'Expertenkurs',
-  short_name: 'EK',
+ {id: 2,
   qualification_kind_ids: [quali_kinds[1].id]},
 
- {label: 'Fortbildungskurs',
-  short_name: 'FK',
+ {id: 3,
   prolongation_ids: [quali_kinds[0].id]},
+)
+
+Event::Kind::Translation.seed(:event_kind_id, :locale,
+  {event_kind_id: event_kinds[0].id,
+   locale: 'de',
+   label: 'Leitungskurs',
+   short_name: 'LK'},
+
+  {event_kind_id: event_kinds[1].id,
+   locale: 'de',
+   label: 'Expertenkurs',
+   short_name: 'EK'},
+
+  {event_kind_id: event_kinds[2].id,
+   locale: 'de',
+   label: 'Fortbildungskurs',
+   short_name: 'FK'}
 )
