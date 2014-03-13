@@ -20,7 +20,7 @@ module HitobitoGeneric
       Group.send  :include, Group::Generic
     end
 
-    initializer "hitobito_generic.add_settings" do |app|
+    initializer 'hitobito_generic.add_settings' do |app|
       Settings.add_source!(File.join(paths['config'].existent, 'settings.yml'))
       Settings.reload!
     end

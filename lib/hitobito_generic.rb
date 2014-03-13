@@ -11,4 +11,3 @@ require 'hitobito_generic/wagon'
 
 module HitobitoGeneric
 end
-

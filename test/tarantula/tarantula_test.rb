@@ -5,8 +5,8 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_generic.
 
-require "test_helper"
-require "relevance/tarantula"
+require 'test_helper'
+require 'relevance/tarantula'
 
 class TarantulaTest < ActionDispatch::IntegrationTest
   # Load enough test data to ensure that there's a link to every page in your
@@ -14,7 +14,7 @@ class TarantulaTest < ActionDispatch::IntegrationTest
   # every page.  For many applications, you can load a decent data set by
   # loading all fixtures.
 
-  reset_fixture_path File.expand_path("../../../spec/fixtures", __FILE__)
+  reset_fixture_path File.expand_path('../../../spec/fixtures', __FILE__)
 
 
   def test_tarantula_as_administrator
@@ -36,11 +36,11 @@ class TarantulaTest < ActionDispatch::IntegrationTest
   def crawl_as(person)
     person.password = 'foobar'
     person.save!
-    post '/users/sign_in', person: {email: person.email, password: 'foobar'}
+    post '/users/sign_in', person: { email: person.email, password: 'foobar' }
     follow_redirect!
 
     t = tarantula_crawler(self)
-    #t.handlers << Relevance::Tarantula::TidyHandler.new
+    # t.handlers << Relevance::Tarantula::TidyHandler.new
 
     # some links use example.com as a domain, allow them
     t.skip_uri_patterns.delete(/^http/)
