@@ -83,6 +83,8 @@ class TarantulaTest < ActionDispatch::IntegrationTest
     t.allow_500_for /groups\/\d+\/people\/\d+\/qualifications\/\d+$/
     # delete not allowed - not completely clarified - investigate later
     t.allow_500_for /groups\/\d+\/events\/\d+\/roles\/\d+$/
+    # not authorizied when role removed before
+    t.allow_500_for /groups\/\d+\/events\/\d+\/participations$/
 
 
     t.crawl_timeout = 10.minutes
