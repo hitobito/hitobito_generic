@@ -74,6 +74,10 @@ class TarantulaTest < ActionDispatch::IntegrationTest
     t.allow_404_for /event_kinds\/\d+$/
     t.allow_404_for /event_kinds$/
     t.allow_404_for /groups\/\d+\/member_counts$/
+
+    # undetermined 404's for specific entries
+    t.allow_404_for /groups\/231636374\/people\/436055665$/
+
     # custom return_urls end up like that.
     t.allow_404_for /^\-?\d+$/
 
