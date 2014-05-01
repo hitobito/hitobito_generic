@@ -10,7 +10,9 @@ de:
   activerecord:
     models:
       group/top_layer: Hauptebene
-      group/layer: Ebene
+      group/layer:
+        one: Ebene
+        other: Ebenen
       group/board:
         one: Vorstand
         other: Vorstände

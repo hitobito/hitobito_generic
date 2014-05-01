@@ -17,10 +17,10 @@ module HitobitoGeneric
 
     config.to_prepare do
       # extend application classes here
-      Group.send  :include, Group::Generic
+      Group.send :include, Group::Generic
     end
 
-    initializer 'hitobito_generic.add_settings' do |app|
+    initializer 'hitobito_generic.add_settings' do |_app|
       Settings.add_source!(File.join(paths['config'].existent, 'settings.yml'))
       Settings.reload!
     end
