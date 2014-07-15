@@ -1,0 +1,40 @@
+#  Copyright (c) 2012-2013, Jungwacht Blauring Schweiz. This file is part of
+#  hitobito and licensed under the Affero General Public License version 3
+#  or later. See the COPYING file at the top-level directory or at
+#  https://github.com/hitobito/hitobito.
+
+slk_pre:
+  event_kind: slk
+  qualification_kind: gl
+  category: 'precondition'
+  role: 'participant'
+
+slk_qual:
+  event_kind: slk
+  qualification_kind: sl
+  category: 'qualification'
+  role: 'participant'
+
+slk_prol:
+  event_kind: slk
+  qualification_kind: gl
+  category: 'prolongation'
+  role: 'participant'
+
+glk_qual:
+  event_kind: glk
+  qualification_kind: gl
+  category: 'qualification'
+  role: 'participant'
+
+fk_gl_prol:
+  event_kind: fk
+  qualification_kind: gl
+  category: 'prolongation'
+  role: 'participant'
+
+fk_sl_prol:
+  event_kind: fk
+  qualification_kind: sl
+  category: 'prolongation'
+  role: 'participant'
