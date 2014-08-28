@@ -7,7 +7,7 @@
 
 require File.expand_path('../app_root', __FILE__)
 
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
 # Declare your gem's dependencies in jubla_generic.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -15,6 +15,7 @@ source "http://rubygems.org"
 gemspec
 
 # Load application Gemfile for all application dependencies.
+# rubocop:disable Eval
 eval File.read(File.expand_path('Gemfile', ENV['APP_ROOT']))
 
 group :development, :test do
