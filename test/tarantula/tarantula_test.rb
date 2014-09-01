@@ -45,8 +45,8 @@ class TarantulaTest < ActionDispatch::IntegrationTest
     # some links use example.com as a domain, allow them
     t.skip_uri_patterns.delete(/^http/)
     t.skip_uri_patterns << /^http(?!:\/\/www\.example\.com)/
-    # only 2012 - 2014
-    t.skip_uri_patterns << /year=201[0-15-9]/
+    # only 2013 - 2015
+    t.skip_uri_patterns << /year=201[0-26-9]/
     t.skip_uri_patterns << /year=200[0-9]/
     t.skip_uri_patterns << /year=202[0-9]/
     t.skip_uri_patterns << /users\/sign_out/
@@ -54,6 +54,7 @@ class TarantulaTest < ActionDispatch::IntegrationTest
     t.skip_uri_patterns << /groups\/\d+\/roles\/(#{person.roles.collect(&:id).join("|")})$/
     # no ajax links in application market
     t.skip_uri_patterns << /groups\/\d+\/events\/\d+\/application_market\/\d+\/participant$/
+    t.skip_uri_patterns << /groups\/\d+\/events\/\d+\/application_market\/\d+\/waiting_list$/
 
     # The type or merge_group_id tarantula generates is not from the
     # given selection, thus producing 404s.

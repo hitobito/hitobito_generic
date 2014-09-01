@@ -7,23 +7,27 @@ admin:
   first_name: Top
   last_name: Administrator
   email: top.admin@example.com
+  primary_group: ch
 
 board_leader:
   first_name: Board
   last_name: Leader
   email: board.leader@example.com
+  primary_group: be_board
   contact_data_visible: true
 
 basic_leader:
   first_name: Basic
   last_name: Leader
   email: basic.leader@example.com
+  primary_group: innerroden
   contact_data_visible: true
 
 basic_member:
   first_name: Basic
   last_name: Member
   email: basic.member@example.com
+  primary_group: innerroden
 
 root:
   company_name: 'Puzzle ITC'
