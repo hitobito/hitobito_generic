@@ -9,5 +9,5 @@ desc 'Crawl app with tarantula (run in wagon)'
 task :tarantula do
   sh 'rm -rf ../hitobito/tmp/tarantula'
   sh 'bash -c "RAILS_ENV=test ../hitobito/bin/with_mysql ' \
-     'rake db:test:prepare app:tarantula:test -t"'
+     'rake app:tarantula:test -t"'
 end
