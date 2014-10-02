@@ -8,20 +8,20 @@ This hitobito wagon defines a basic generic organization hierarchy.
 
 * Hauptebene
   * Hauptebene
-    * Administrator: [:admin, :layer_full]
-    * Leitung: [:layer_full, :contact_data, :qualify, :approve_applications]
-    * Mitglied: [:layer_read, :contact_data]
+    * Administrator: [:admin, :layer_and_below_full]
+    * Leitung: [:layer_and_below_full, :contact_data, :approve_applications]
+    * Mitglied: [:layer_and_below_read, :contact_data]
 * Ebene
   * Ebene
-    * Leitung: [:layer_full, :contact_data, :qualify, :approve_applications]
-    * Mitglied: [:layer_read, :contact_data]
+    * Leitung: [:layer_and_below_full, :contact_data, :approve_applications]
+    * Mitglied: [:layer_and_below_read, :contact_data]
 * Global
+  * Vorstand
+    * Leitung: [:layer_and_below_full, :contact_data, :approve_applications]
+    * Mitglied: [:layer_and_below_read, :contact_data]
   * Basisgruppe
     * Leitung: [:group_full, :contact_data]
     * Mitglied: [:group_read]
-  * Vorstand
-    * Leitung: [:layer_full, :contact_data, :qualify, :approve_applications]
-    * Mitglied: [:layer_read, :contact_data]
   * Global
     * Adressverwaltung: [:group_full]
     * Versandadresse: []
