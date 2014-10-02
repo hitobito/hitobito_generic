@@ -6,5 +6,5 @@
 #  https://github.com/hitobito/hitobito_generic.
 
 class Role::Leader < Role
-  self.permissions = [:layer_full, :contact_data, :approve_applications]
+  self.permissions = [:layer_and_below_full, :contact_data, :approve_applications]
 end

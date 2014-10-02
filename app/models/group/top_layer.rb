@@ -15,7 +15,7 @@ class Group::TopLayer < Group
 
 
   class Administrator < Role
-    self.permissions = [:admin, :layer_full]
+    self.permissions = [:admin, :layer_and_below_full]
   end
 
   class Leader < Role::Leader
