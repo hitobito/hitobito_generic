@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+type = YML
+
+[hitobito_generic.models-generic]
+file_filter = config/locales/models.generic.<lang>.yml
+source_file = config/locales/models.generic.de.yml
+source_lang = de
+
