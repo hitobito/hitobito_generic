@@ -35,4 +35,12 @@ class TarantulaTest < ActionDispatch::IntegrationTest
     crawl_as(people(:basic_member))
   end
 
+  def configure_urls_with_generic(t, person)
+    configure_urls_without_generic(t, person)
+
+    # do not update any role to avoid loosing access to them.
+    t.skip_uri_patterns << /groups\/\d+\/roles\/\d+$/
+  end
+  alias_method_chain :configure_urls, :generic
+
 end
