@@ -1,1 +1,20 @@
-en: {}
+en:
+  activerecord:
+    models:
+      group/top_layer: Main level
+      group/layer:
+        one: Level
+        other: Levels
+      group/board:
+        one: Executive
+        other: Executives
+      group/basic:
+        one: Base group
+        other: Base groups
+      group/top_layer/administrator: Administrator
+      role/leader: Leader
+      role/member: Member
+      role/participant: Participant
+      role/external: External
+      role/address_admin: Address administration
+      role/dispatch_address: Shipping address
