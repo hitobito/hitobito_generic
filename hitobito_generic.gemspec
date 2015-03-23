@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.version     = HitobitoGeneric::VERSION
   s.authors     = ['Pascal Zumkehr']
   s.email       = ['zumkehr@puzzle.ch']
-  s.homepage    = 'hitobito.ch'
+  s.homepage    = 'http://hitobito.ch'
   s.summary     = 'Generic wagon for hitobito'
   s.description = 'Generic wagon for hitobito'
 
