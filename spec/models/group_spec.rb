@@ -15,7 +15,7 @@ describe Group do
     subject { Group.all_types }
 
     it 'must have simple group as last item' do
-      subject.last.should == Group::Basic
+      expect(subject.last).to eq(Group::Basic)
     end
   end
 
@@ -23,25 +23,25 @@ describe Group do
     subject { Group.course_offerers }
 
     it 'includes top layer' do
-      should include groups(:ch)
+      is_expected.to include groups(:ch)
     end
 
     it 'includes layers' do
-      should include groups(:be)
-      should include groups(:no)
-      should include groups(:bern)
-      should include groups(:thun)
+      is_expected.to include groups(:be)
+      is_expected.to include groups(:no)
+      is_expected.to include groups(:bern)
+      is_expected.to include groups(:thun)
     end
 
     it 'does not include basic groups' do
-      should_not include groups(:asterix)
-      should_not include groups(:obelix)
-      should_not include groups(:mickey)
+      is_expected.not_to include groups(:asterix)
+      is_expected.not_to include groups(:obelix)
+      is_expected.not_to include groups(:mickey)
     end
 
     it 'orders by parent and name' do
       expected = ['Verband', 'Nordostschweiz', 'Region Bern', 'Ausserroden', 'Innerroden', 'Stadt Bern', 'Thun']
-      subject.map(&:name).should eq expected
+      expect(subject.map(&:name)).to eq expected
     end
   end
 
