@@ -43,7 +43,7 @@ class TarantulaTest < ActionDispatch::IntegrationTest
     # switching language when creating an own participation failed will result in an
     # access denied - POST participations is allowed, but not GET participations
     # (only GET participations/new).
-    t.allow_500_for(/groups\/\d+\/events\/\d+\/participations$/)
+    t.allow_500_for(/groups\/\d+\/events\/\d+\/participations\?event_participation/)
   end
   alias_method_chain :configure_urls, :generic
 
