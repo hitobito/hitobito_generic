@@ -40,10 +40,6 @@ class TarantulaTest < ActionDispatch::IntegrationTest
 
     # do not update any role to avoid loosing access to them.
     t.skip_uri_patterns << /groups\/\d+\/roles\/\d+$/
-    # switching language when creating an own participation failed will result in an
-    # access denied - POST participations is allowed, but not GET participations
-    # (only GET participations/new).
-    t.allow_500_for(/groups\/\d+\/events\/\d+\/participations\?event_participation/)
   end
   alias_method_chain :configure_urls, :generic
 
