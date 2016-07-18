@@ -6,6 +6,9 @@
 #  https://github.com/hitobito/hitobito_generic.
 
 class Group::TopLayerMembers < Group::Members
+
+  children Group::TopLayerMembers
+
   class ActiveMember < Role::ActiveMember
   end
 

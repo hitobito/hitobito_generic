@@ -7,6 +7,8 @@
 
 class Group::TopLayerContacts < Group::Contacts
 
+  children Group::TopLayerContacts
+
   class Contact < Role::Contact
     self.permissions = []
   end

@@ -6,6 +6,9 @@
 #  https://github.com/hitobito/hitobito_generic.
 
 class Group::RegionMembers < Group::Members
+
+  children Group::RegionMembers
+
   class ActiveMember < Role::ActiveMember
   end
 

@@ -7,6 +7,8 @@
 
 class Group::RegionContacts < Group::Contacts
 
+  children Group::RegionContacts
+
   class Contact < Role::Contact
     self.permissions = []
   end

@@ -7,6 +7,8 @@
 
 class Group::LocalMembers < Group::Members
 
+  children Group::LocalMembers
+
   class Leader < Role::Leader
   end
 

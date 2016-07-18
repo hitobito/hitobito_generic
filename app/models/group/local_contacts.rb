@@ -7,6 +7,8 @@
 
 class Group::LocalContacts < Group::Contacts
 
+  children Group::LocalContacts
+
   class Contact < Role::Contact
     self.permissions = []
   end

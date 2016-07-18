@@ -6,6 +6,9 @@
 #  https://github.com/hitobito/hitobito_generic.
 
 class Group::RegionCommittee < Group::Committee
+
+  children Group::RegionCommittee
+
   class Leader < Role::CommitteeLeader
   end
 
