@@ -5,15 +5,12 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_generic.
 
-class Group::Basic < Group
-
-  class Leader < Role::Leader
-    self.permissions = [:group_full, :contact_data]
+class Group::TopLayerMembers < Group::Members
+  class ActiveMember < Role::ActiveMember
   end
 
-  class Member < Role::Member
-    self.permissions = [:group_read]
+  class PassiveMember < Role::PassiveMember
   end
 
-  roles Leader, Member
+  roles ActiveMember, PassiveMember
 end

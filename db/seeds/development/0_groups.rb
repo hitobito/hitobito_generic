@@ -19,14 +19,8 @@ unless ch.address.present?
   end
 end
 
-Group::Board.seed(:name, :parent_id,
-  {name: 'Verbandsleitung',
-   parent_id: ch.id },
-)
-
-states = Group::Layer.seed(:name, :parent_id,
+states = Group::Region.seed(:name, :parent_id,
   {name: 'Region Bern',
-   short_name: 'BE',
    address: "Klostergasse 3",
    zip_code: "3333",
    town: "Bern",
@@ -35,7 +29,6 @@ states = Group::Layer.seed(:name, :parent_id,
    parent_id: ch.id},
 
   {name: 'Region Zürich',
-   short_name: 'ZH',
    address: "Tellgasse 3",
    zip_code: "8888",
    town: "Zürich",
@@ -44,7 +37,6 @@ states = Group::Layer.seed(:name, :parent_id,
    parent_id: ch.id },
 
   {name: 'Region Nordost',
-   short_name: 'NO',
    address: "Nordostgasse 3",
    zip_code: "9000",
    town: "Nordosthausen",
@@ -55,72 +47,61 @@ states = Group::Layer.seed(:name, :parent_id,
 
 states.each do |s|
   seeder.seed_social_accounts(s)
-  board = s.children.where(type: 'Group::Board').first
+  board = s.children.where(type: 'Group::RegionBoard').first
   board.update_attributes(seeder.group_attributes)
 end
 
-Group::Basic.seed(:name, :parent_id,
-  {name: 'FG Sicherheit',
-   parent_id: states[0].id },
 
-  {name: 'FG Security',
-   parent_id: states[2].id },
-)
 
-clubs = Group::Layer.seed(:name, :parent_id,
-  {name: 'Verein Stadt',
-   parent_id: states[0].id }.merge(seeder.group_attributes),
+clubs = Group::Local.seed(:name, :parent_id,
+seeder.group_attributes.merge(
+  {name: 'Verein Bern Stadt',
+   short_name: 'Bern Stadt',
+   parent_id: states[0].id }),
 
-  {name: 'Verein Oberland',
-   parent_id: states[0].id }.merge(seeder.group_attributes),
+seeder.group_attributes.merge(
+  {name: 'Verein Konolfingen',
+   short_name: 'Konolfingen',
+   parent_id: states[0].id }),
 
-  {name: 'Verein Jura',
-   parent_id: states[0].id }.merge(seeder.group_attributes),
+seeder.group_attributes.merge(
+  {name: 'Verein Biel',
+   short_name: 'Biel',
+   parent_id: states[0].id }),
 
-  {name: 'Verein Stadt',
-   parent_id: states[1].id }.merge(seeder.group_attributes),
+seeder.group_attributes.merge(
+  {name: 'Verein Düdingen',
+   short_name: 'Düdingen',
+   parent_id: states[0].id }),
 
-  {name: 'Verein Oberland',
-   parent_id: states[1].id }.merge(seeder.group_attributes),
+seeder.group_attributes.merge(
+  {name: 'Verein Kerzers',
+   short_name: 'Kerzers',
+   parent_id: states[0].id }),
+
+seeder.group_attributes.merge(
+  {name: 'Verein Züri Stadt',
+   short_name: 'Züri',
+   parent_id: states[1].id }),
+
+seeder.group_attributes.merge(
+  {name: 'Verein Seebach',
+   short_name: 'Seebach',
+   parent_id: states[1].id }),
+
+seeder.group_attributes.merge(
+  {name: 'Verein ZH Oberland',
+   short_name: 'Oberland',
+   parent_id: states[1].id }),
+
+seeder.group_attributes.merge(
+  {name: 'Verein Solothurn',
+   short_name: 'Solothurn',
+   parent_id: states[2].id })
 )
 
 clubs.each do |s|
   seeder.seed_social_accounts(s)
 end
-
-basics = Group::Basic.seed(:name, :parent_id,
-  {name: 'Asterix',
-   parent_id: clubs[0].id },
-
-  {name: 'Obelix',
-   parent_id: clubs[0].id },
-
-  {name: 'Idefix',
-   parent_id: clubs[0].id },
-
-  {name: 'Mickey',
-   parent_id: clubs[1].id },
-
-  {name: 'Minnie',
-   parent_id: clubs[2].id },
-
-  {name: 'Goofy',
-   parent_id: clubs[3].id },
-
-  {name: 'Donald',
-   parent_id: clubs[4].id },
-
-  {name: 'Gustav',
-   parent_id: clubs[4].id },
-)
-
-Group::Basic.seed(:name, :parent_id,
-  {name: 'Tschutter',
-   parent_id: basics[0].id },
-
-  {name: 'Angestellte',
-   parent_id: basics[1].id },
-)
-
 
 Group.rebuild!

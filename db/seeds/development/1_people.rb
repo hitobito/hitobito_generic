@@ -11,7 +11,8 @@ class GenericPersonSeeder < PersonSeeder
 
   def amount(role_type)
     case role_type.name.demodulize
-    when 'Member', 'Participant', 'External' then 5
+    when 'Member', 'Participant', 'ActiveMember', 'PassiveMember' then 5
+    when 'Contact' then 10
     else 1
     end
   end
@@ -49,5 +50,5 @@ end
 
 seeder.encrypted_password = BCrypt::Password.create("demo", cost: 1)
 seeder.seed_demo_person('admin@hitobito.ch', root, Group::TopLayer::Administrator)
-seeder.seed_demo_person('leitung@hitobito.ch', Group.find_by_name('Region Bern'), Group::Layer::Leader)
-seeder.seed_demo_person('mitglied@hitobito.ch', Group.find_by_name('Donald'), Group::Basic::Member)
+seeder.seed_demo_person('leitung@hitobito.ch', Group.find_by_name('Region Bern'), Group::Local::MainLeader)
+seeder.seed_demo_person('mitglied@hitobito.ch', Group.find_by_name('Verein Bern Stadt'), Group::Local::ActiveMember)

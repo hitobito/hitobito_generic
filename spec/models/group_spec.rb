@@ -11,13 +11,14 @@ describe Group do
 
   include_examples 'group types'
 
-  describe '#all_types' do
-    subject { Group.all_types }
-
-    it 'must have simple group as last item' do
-      expect(subject.last).to eq(Group::Basic)
-    end
-  end
+  # # not necessary with this sctrucutre
+  # describe '#all_types' do
+  #   subject { Group.all_types }
+  #
+  #   it 'must have simple group as last item' do
+  #     expect(subject.last).to eq(Group::Basic)
+  #   end
+  # end
 
   describe '.course_offerers' do
     subject { Group.course_offerers }
@@ -26,21 +27,21 @@ describe Group do
       is_expected.to include groups(:ch)
     end
 
-    it 'includes layers' do
+    it 'includes regions' do
       is_expected.to include groups(:be)
       is_expected.to include groups(:no)
-      is_expected.to include groups(:bern)
-      is_expected.to include groups(:thun)
     end
 
-    it 'does not include basic groups' do
+    it 'does not include local groups' do
+      is_expected.not_to include groups(:bern)
+      is_expected.not_to include groups(:thun)
       is_expected.not_to include groups(:asterix)
       is_expected.not_to include groups(:obelix)
       is_expected.not_to include groups(:mickey)
     end
 
     it 'orders by parent and name' do
-      expected = ['Verband', 'Nordostschweiz', 'Region Bern', 'Ausserroden', 'Innerroden', 'Stadt Bern', 'Thun']
+      expected = ['Verband', 'Nordostschweiz', 'Region Bern', 'Ausserroden', 'Innerroden']
       expect(subject.map(&:name)).to eq expected
     end
   end

@@ -6,7 +6,6 @@
 #  https://github.com/hitobito/hitobito_generic.
 
 Group::TopLayer.seed_once(:parent_id,
-  {name: 'Verband',
-   short_name: 'Verband'}
+  {name: 'Dachverband',
+   short_name: 'Dachverband'}
 )
-

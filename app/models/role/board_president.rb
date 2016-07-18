@@ -5,8 +5,6 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_generic.
 
-class Role::External < ::Role
-  self.permissions = []
-  self.visible_from_above = false
-  self.kind = :external
+class Role::BoardPresident < Role
+  self.permissions = [:layer_full, :contact_data]
 end

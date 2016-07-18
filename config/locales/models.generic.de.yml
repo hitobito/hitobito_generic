@@ -7,21 +7,41 @@ de:
   activerecord:
     models:
       group/top_layer: Hauptebene
-      group/layer:
-        one: Ebene
-        other: Ebenen
+      group/region:
+        one: "Region/Kanton"
+        other: "Regionen/Kantone"
+      group/local:
+        one: "Lokalgruppe/Sektion"
+        other: "Lokalgruppen/Sektionen"
       group/board:
         one: Vorstand
         other: Vorstände
-      group/basic:
-        one: Basisgruppe
-        other: Basisgruppen
-
+      group/contacts:
+        one: Kontakte
+        other: Kontakte
+      group/members:
+        one: Mitglieder
+        other: Mitglieder
+      group/office:
+        one: Geschäftsstelle
+        other: Geschäftsstellen
+      group/committee:
+        one: "Gremium/Projektgruppe"
+        other: "Gremien/Projektgruppen"
       group/top_layer/administrator: Administrator
+      group/local/main_leader: Hauptleitung
+      group/local/address_manager: Adressverwaltung
 
+
+      role/contact: Kontakt
+      role/committee_leader: Leitung
+      role/committee_member: Mitglied
+      role/active_member: Aktivmitglied
+      role/passive_member: Passivmitglied
+      role/office_manager: Leitung
+      role/office_staff: Mitglied
       role/leader: Leitung
-      role/member: Mitglied
-      role/participant: TeilnehmerIn
-      role/external: Extern
-      role/address_admin: Adressverwaltung
-      role/dispatch_address: Versandadresse
+      role/board_president: Präsident
+      role/board_vice_president: Vizepräsident
+      role/board_secretary: Sekretär(in)
+      role/board_member: Vorstandsmitglied

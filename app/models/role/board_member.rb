@@ -5,6 +5,6 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_generic.
 
-# Versandadresse. Intended to be used with mailing lists. No additional permissions
-class Role::DispatchAddress < ::Role
+class Role::BoardMember < Role
+  self.permissions = [:layer_full, :contact_data]
 end

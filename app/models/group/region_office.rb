@@ -5,6 +5,13 @@
 #  or later. See the COPYING file at the top-level directory or at
 #  https://github.com/hitobito/hitobito_generic.
 
-class Role::Member < Role
-  self.permissions = [:group_and_below_read]
+class Group::RegionOffice < Group::Office
+
+  class Manager < Role::OfficeManager
+  end
+
+  class Staff < Role::OfficeStaff
+  end
+
+  roles Manager, Staff
 end

@@ -13,7 +13,7 @@ ch:
 
 federal_board:
   name: Verbandsleitung
-  type: Group::Board
+  type: Group::TopLayerBoard
   parent: ch
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:ch) %>
   lft: 2
@@ -23,7 +23,7 @@ be:
   name: Region Bern
   short_name: BE
   parent: ch
-  type: Group::Layer
+  type: Group::Region
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:be) %>
   lft: 4
   rgt: 27
@@ -31,7 +31,7 @@ be:
 be_board:
   name: Vorstand Bern
   parent: be
-  type: Group::Board
+  type: Group::RegionBoard
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:be) %>
   lft: 5
   rgt: 6
@@ -39,7 +39,7 @@ be_board:
 be_security:
   name: FG Sicherheit
   parent: be
-  type: Group::Basic
+  type: Group::RegionCommittee
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:be) %>
   lft: 7
   rgt: 8
@@ -47,7 +47,7 @@ be_security:
 be_state_camp:
   name: AG Kantonslager
   parent: be
-  type: Group::Basic
+  type: Group::RegionCommittee
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:be) %>
   lft: 9
   rgt: 10
@@ -56,7 +56,7 @@ be_state_camp:
   name: Nordostschweiz
   short_name: NO
   parent: ch
-  type: Group::Layer
+  type: Group::Region
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:no) %>
   lft: 28
   rgt: 35
@@ -64,7 +64,7 @@ be_state_camp:
 no_board:
   name: Vorstand NO
   parent: "no"
-  type: Group::Board
+  type: Group::RegionBoard
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:no) %>
   lft: 29
   rgt: 30
@@ -72,7 +72,7 @@ no_board:
 bern:
   name: Stadt Bern
   parent: be
-  type: Group::Layer
+  type: Group::Local
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:bern) %>
   lft: 11
   rgt: 20
@@ -80,7 +80,7 @@ bern:
 bern_board:
   name: Vorstand Stadt Bern
   parent: bern
-  type: Group::Board
+  type: Group::LocalBoard
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:bern) %>
   lft: 12
   rgt: 13
@@ -88,7 +88,7 @@ bern_board:
 thun:
   name: Thun
   parent: be
-  type: Group::Layer
+  type: Group::Local
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:thun) %>
   lft: 21
   rgt: 26
@@ -96,7 +96,7 @@ thun:
 thun_board:
   name: Vorstand Thun
   parent: thun
-  type: Group::Board
+  type: Group::LocalBoard
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:thun) %>
   lft: 22
   rgt: 23
@@ -104,7 +104,7 @@ thun_board:
 asterix:
   name: Asterix
   parent: bern
-  type: Group::Basic
+  type: Group::LocalMembers
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:bern) %>
   lft: 14
   rgt: 17
@@ -112,7 +112,7 @@ asterix:
 obelix:
   name: Obelix
   parent: bern
-  type: Group::Basic
+  type: Group::LocalMembers
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:bern) %>
   lft: 18
   rgt: 19
@@ -120,7 +120,7 @@ obelix:
 fussball:
   name: Fussballgruppe
   parent: asterix
-  type: Group::Basic
+  type: Group::LocalMembers
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:bern) %>
   lft: 15
   rgt: 16
@@ -128,7 +128,7 @@ fussball:
 mickey:
   name: Mickey
   parent: thun
-  type: Group::Basic
+  type: Group::LocalMembers
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:thun) %>
   lft: 24
   rgt: 25
@@ -136,7 +136,7 @@ mickey:
 innerroden:
   name: Innerroden
   parent: "no"
-  type: Group::Layer
+  type: Group::Region
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:innerroden) %>
   lft: 31
   rgt: 32
@@ -144,7 +144,7 @@ innerroden:
 ausserroden:
   name: Ausserroden
   parent: "no"
-  type: Group::Layer
+  type: Group::Region
   layer_group_id: <%= ActiveRecord::FixtureSet.identify(:ausserroden) %>
   lft: 33
   rgt: 34
