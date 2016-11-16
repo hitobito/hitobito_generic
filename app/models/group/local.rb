@@ -11,7 +11,8 @@ class Group::Local < Group
   self.event_types = [Event]
   self.default_children = []
 
-  children Group::LocalBoard, Group::LocalOffice, Group::LocalCommittee, Group::LocalMembers, Group::LocalContacts
+  children Group::LocalBoard, Group::LocalOffice, Group::LocalCommittee,
+           Group::LocalMembers, Group::LocalContacts
 
   class MainLeader < Role
     self.permissions = [:layer_and_below_full]

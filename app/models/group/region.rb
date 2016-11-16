@@ -11,5 +11,6 @@ class Group::Region < Group
   self.event_types = [Event, Event::Course]
   self.default_children = [Group::RegionBoard, Group::RegionOffice, Group::RegionContacts]
 
-  children Group::RegionBoard, Group::RegionOffice, Group::RegionCommittee, Group::RegionMembers, Group::RegionContacts, Group::Region, Group::Local
+  children Group::RegionBoard, Group::RegionOffice, Group::RegionCommittee, Group::RegionMembers,
+           Group::RegionContacts, Group::Region, Group::Local
 end
