@@ -11,14 +11,13 @@ describe Group do
 
   include_examples 'group types'
 
-  # # not necessary with this sctrucutre
-  # describe '#all_types' do
-  #   subject { Group.all_types }
-  #
-  #   it 'must have simple group as last item' do
-  #     expect(subject.last).to eq(Group::Basic)
-  #   end
-  # end
+  describe '#all_types' do
+    subject { Group.all_types }
+
+    it 'must have simple group as last item' do
+      expect(subject.last).to eq(Group::LocalContacts)
+    end
+  end
 
   describe '.course_offerers' do
     subject { Group.course_offerers }

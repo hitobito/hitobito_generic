@@ -16,9 +16,9 @@
 leader_groups_basic:
   relation: leaders_group
   relation_type: Subscription
-  role_type: Group::Basic::Leader
+  role_type: Group::Local::MainLeader
 
 leader_groups_board:
   relation: leaders_group
   relation_type: Subscription
-  role_type: Group::Board::Leader
+  role_type: Group::TopLayerBoard::President

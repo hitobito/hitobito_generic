@@ -20,14 +20,14 @@ basic_leader:
   first_name: Basic
   last_name: Leader
   email: basic.leader@example.com
-  primary_group: innerroden
+  primary_group: bern
   contact_data_visible: true
 
 basic_member:
   first_name: Basic
   last_name: Member
   email: basic.member@example.com
-  primary_group: innerroden
+  primary_group: asterix
 
 root:
   company_name: 'Puzzle ITC'

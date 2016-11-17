@@ -11,14 +11,14 @@ admin:
 board_leader:
   person: board_leader
   group: be_board
-  type: Group::Board::Leader
+  type: Group::RegionBoard::President
 
 basic_leader:
   person: basic_leader
-  group: innerroden
-  type: Group::Basic::Leader
+  group: bern
+  type: Group::Local::MainLeader
 
 basic_member:
   person: basic_member
-  group: innerroden
-  type: Group::Basic::Member
+  group: asterix
+  type: Group::LocalMembers::ActiveMember
