@@ -18,10 +18,8 @@ matrix:
   allow_failures:
     - rvm: 2.4.0
 install:
-  - cd ..
-  - git clone https://github.com/hitobito/hitobito.git hitobito
-  - cd hitobito
-  - git checkout -qf $([[ $TRAVIS_BRANCH = 'stable' ]] && echo 'stable' || echo 'master')
+  - cd .. && git clone https://github.com/hitobito/hitobito.git hitobito
+  - cd hitobito && git checkout -f $([[ $TRAVIS_BRANCH = 'stable' ]] && echo 'stable' || echo 'master')
   - sed -i "s/^\(gem .mysql2.\),.*$/\1/" Gemfile
   - cp Wagonfile.ci Wagonfile
   - bundle install --path vendor/bundle
