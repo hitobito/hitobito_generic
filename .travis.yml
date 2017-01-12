@@ -18,6 +18,15 @@ matrix:
   allow_failures:
     - rvm: 2.4.0
 install:
+  - cd ..
+  - git clone https://github.com/hitobito/hitobito.git hitobito
+  - cd hitobito
+  - git checkout -qf $([[ $TRAVIS_BRANCH = 'stable' ]] && echo 'stable' || echo 'master')
   - sed -i "s/^\(gem .mysql2.\),.*$/\1/" Gemfile
+  - cp Wagonfile.ci Wagonfile
   - bundle install --path vendor/bundle
   - bundle update mysql2
+  - for d in ../hitobito_*; do cp Gemfile.lock $d; done
+  - rm -rf tmp/tarantula
+script:
+  - bundle exec rake db:create ci:wagon --trace
