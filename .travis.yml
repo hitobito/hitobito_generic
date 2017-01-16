@@ -22,7 +22,7 @@ install:
   - cd hitobito && git checkout -f $([[ $TRAVIS_BRANCH = 'stable' ]] && echo 'stable' || echo 'master')
   - sed -i "s/^\(gem .mysql2.\),.*$/\1/" Gemfile
   - cp -v Wagonfile.ci Wagonfile
-  - rvm use $TRAVIS_RUBY_VERSION
+  - rvm use $TRAVIS_RUBY_VERSION --install --binary --fuzzy
   - export BUNDLE_GEMFILE=$PWD/Gemfile
   - bundle install --path vendor/bundle
   - bundle update mysql2
