@@ -23,6 +23,7 @@ install:
   - sed -i "s/^\(gem .mysql2.\),.*$/\1/" Gemfile
   - cp -v Wagonfile.ci Wagonfile
   - rvm use $TRAVIS_RUBY_VERSION
+  - export BUNDLE_GEMFILE=$PWD/Gemfile
   - bundle install --path vendor/bundle
   - bundle update mysql2
   - for d in ../hitobito_*; do cp -v Gemfile.lock $d; done
