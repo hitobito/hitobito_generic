@@ -24,6 +24,7 @@ install:
   - cp -v Wagonfile.ci Wagonfile
   - rvm use $TRAVIS_RUBY_VERSION --install --binary --fuzzy
   - export BUNDLE_GEMFILE=$PWD/Gemfile
+  - gem install bundler --version 1.9.10
   - bundle install --path vendor/bundle
   - bundle update mysql2
   - for d in ../hitobito_*; do cp -v Gemfile.lock $d; done
