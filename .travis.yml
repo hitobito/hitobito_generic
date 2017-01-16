@@ -27,9 +27,10 @@ install:
   - gem install bundler --version 1.9.10
   - bundle install --path vendor/bundle
   - bundle update mysql2
+  - bundle exec rake db:create
   - for d in ../hitobito_*; do cp -v Gemfile.lock $d; done
-  - rm -rf tmp/tarantula
-  - cd $TRAVIS_BUILD_DIR && rvm use $TRAVIS_RUBY_VERSION --fuzzy && bundle install --path vendor/bundle
+  - cd $TRAVIS_BUILD_DIR
+  - rvm use $TRAVIS_RUBY_VERSION --fuzzy
+  - bundle install --path vendor/bundle
 script:
-  - cd ../../hitobito/hitobito && rvm use $TRAVIS_RUBY_VERSION --fuzzy && bundle exec rake db:create ci:wagon --trace
-  - cd $TRAVIS_BUILD_DIR && rvm use $TRAVIS_RUBY_VERSION --fuzzy && bundle exec rake app:rubocop app:ci:setup:rspec spec:all --trace
+  - bundle exec rake app:rubocop app:ci:setup:rspec spec:all --trace
