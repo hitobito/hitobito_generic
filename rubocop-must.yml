@@ -9,3 +9,4 @@ AllCops:
     - bin/**/*
     - spec/**/*
     - test/**/*
+    - vendor/bundle/**/*
