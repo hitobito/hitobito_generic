@@ -1,4 +1,5 @@
 language: ruby
+cache: bundler
 branches:
   only:
     - master
@@ -7,6 +8,7 @@ env:
   global:
     - HEADLESS=true
     - RAILS_DB_ADAPTER=mysql2
+    - RAILS_DB_NAME=hitobito_test
     - RAILS_ENV=development
 rvm:
   - 1.9.3
