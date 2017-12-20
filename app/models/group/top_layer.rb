@@ -15,7 +15,7 @@ class Group::TopLayer < Group
            Group::TopLayerMembers, Group::TopLayerContacts, Group::Region, Group::Local
 
   class Administrator < Role
-    self.permissions = [:admin, :finance, :layer_and_below_full]
+    self.permissions = [:admin, :finance, :layer_and_below_full, :impersonation]
   end
 
   roles Administrator

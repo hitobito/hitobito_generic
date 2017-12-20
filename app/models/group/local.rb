@@ -19,7 +19,7 @@ class Group::Local < Group
   end
 
   class AddressManager < Role
-    self.permissions = [:group_and_below_full]
+    self.permissions = [:group_and_below_full, :impersonation]
   end
 
   class Leader < Role::Leader
