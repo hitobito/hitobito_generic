@@ -9,3 +9,8 @@ application:
     de: Deutsch
     en: English
     fr: Français
+  footer:
+    links:
+      "Forum": https://hitobito.discoursehosting.net/
+      "Dokumentation": https://hitobito.com/docs
+      "E-Mail an Support": 'mailto:support@hitobito.com'
