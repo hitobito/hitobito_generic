@@ -15,6 +15,9 @@ class Group::TopLayerMembers < Group::Members
   class PassiveMember < Role::PassiveMember
   end
 
+  class AddressManager < Role::AddressManager
+  end
+
   self.default_role = ActiveMember
-  roles ActiveMember, PassiveMember
+  roles AddressManager, ActiveMember, PassiveMember
 end

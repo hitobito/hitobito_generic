@@ -33,6 +33,7 @@ de:
       group/local/address_manager: Adressverwaltung
 
 
+      role/address_manager: Adressverwaltung
       role/contact: Kontakt
       role/committee_leader: Leitung
       role/committee_member: Mitglied

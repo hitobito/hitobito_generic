@@ -30,6 +30,7 @@ fr:
         other: "comités"
       group/top_layer/administrator: administrateur
 
+      role/address_manager: responsable de adresses
       role/contact: contact
       role/committee_leader: responsable
       role/committee_member: membre

@@ -30,6 +30,7 @@ en:
         other: "Committees"
       group/top_layer/administrator: administrator
 
+      role/address_manager: address manager
       role/contact: contact
       role/committee_leader: leader
       role/committee_member: member

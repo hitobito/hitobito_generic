@@ -13,7 +13,10 @@ class Group::LocalContacts < Group::Contacts
     self.permissions = []
   end
 
+  class AddressManager < Role::AddressManager
+  end
+
   self.default_role = Contact
-  roles Contact
+  roles AddressManager, Contact
 
 end
