@@ -9,7 +9,10 @@ class Group::Region < Group
 
   self.layer = true
   self.event_types = [Event, Event::Course]
-  self.default_children = [Group::RegionBoard, Group::RegionOffice, Group::RegionContacts, Group::RegionMembers]
+  self.default_children = [Group::RegionBoard,
+                           Group::RegionOffice,
+                           Group::RegionContacts,
+                           Group::RegionMembers]
 
   children Group::RegionBoard, Group::RegionOffice, Group::RegionCommittee, Group::RegionMembers,
            Group::RegionContacts, Group::Region, Group::Local

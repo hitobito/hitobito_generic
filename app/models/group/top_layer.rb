@@ -9,7 +9,10 @@ class Group::TopLayer < Group
 
   self.layer = true
   self.event_types = [Event, Event::Course]
-  self.default_children = [Group::TopLayerBoard, Group::TopLayerOffice, Group::TopLayerContacts, Group::TopLayerMembers]
+  self.default_children = [Group::TopLayerBoard,
+                           Group::TopLayerOffice,
+                           Group::TopLayerContacts,
+                           Group::TopLayerMembers]
 
   children Group::TopLayerBoard, Group::TopLayerOffice, Group::TopLayerCommittee,
            Group::TopLayerMembers, Group::TopLayerContacts, Group::Region, Group::Local
