@@ -15,5 +15,6 @@ class Group::RegionMembers < Group::Members
   class PassiveMember < Role::PassiveMember
   end
 
+  self.default_role = ActiveMember
   roles ActiveMember, PassiveMember
 end

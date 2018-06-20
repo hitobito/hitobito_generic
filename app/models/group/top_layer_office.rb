@@ -13,5 +13,6 @@ class Group::TopLayerOffice < Group::Office
   class Staff < Role::OfficeStaff
   end
 
+  self.default_role = Staff
   roles Manager, Staff
 end

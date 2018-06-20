@@ -19,5 +19,6 @@ class Group::LocalMembers < Group::Members
   class PassiveMember < Role::PassiveMember
   end
 
+  self.default_role = ActiveMember
   roles Leader, ActiveMember, PassiveMember
 end

@@ -13,6 +13,7 @@ class Group::TopLayerContacts < Group::Contacts
     self.permissions = []
   end
 
+  self.default_role = Contact
   roles Contact
 
 end
