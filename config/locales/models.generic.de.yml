@@ -29,6 +29,7 @@ de:
         one: "Gremium/Projektgruppe"
         other: "Gremien/Projektgruppen"
       group/top_layer/administrator: Administrator
+      group/region/administrator: Administrator
       group/local/main_leader: Hauptleitung
       group/local/address_manager: Adressverwaltung
 
@@ -46,3 +47,4 @@ de:
       role/board_vice_president: Vizepräsident
       role/board_secretary: Sekretär(in)
       role/board_member: Vorstandsmitglied
+      role/treasurer: Kassier

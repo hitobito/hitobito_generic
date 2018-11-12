@@ -18,6 +18,10 @@ class Group::RegionBoard < Group::Board
   class Member < Role::BoardMember
   end
 
+  class Treasurer < Role::Treasurer
+  end
+
+
   self.default_role = Member
-  roles President, VicePresident, Secretary, Member
+  roles President, VicePresident, Secretary, Treasurer, Member
 end

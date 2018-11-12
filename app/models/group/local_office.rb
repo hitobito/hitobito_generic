@@ -13,6 +13,10 @@ class Group::LocalOffice < Group::Office
   class Staff < Role::OfficeStaff
   end
 
+  class Treasurer < Role::Treasurer
+  end
+
+
   self.default_role = Staff
-  roles Manager, Staff
+  roles Manager, Treasurer, Staff
 end
