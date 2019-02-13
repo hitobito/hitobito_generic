@@ -17,7 +17,9 @@ class Group::Region < Group
   children Group::RegionBoard, Group::RegionOffice, Group::RegionCommittee, Group::RegionMembers,
            Group::RegionContacts, Group::Region, Group::Local
 
-  class RegionalAdmin < Role
+  class Administrator < Role
     self.permissions = [:layer_and_below_full, :contact_data, :finance]
   end
+
+  roles Administrator
 end
