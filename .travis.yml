@@ -11,7 +11,6 @@ env:
     - RAILS_DB_NAME=hitobito_test
     - RAILS_ENV=development
 rvm:
-  - 2.1.7
   - 2.2.3
   - 2.3.1
   - 2.4.0
