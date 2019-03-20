@@ -12,5 +12,5 @@ application:
   footer:
     links:
       "Forum": https://hitobito.discoursehosting.net/
-      "Dokumentation": https://hitobito.com/docs
+      "Dokumentation": https://hitobito.readthedocs.io
       "E-Mail an Support": 'mailto:support@hitobito.com'
