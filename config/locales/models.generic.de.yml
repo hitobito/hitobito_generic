@@ -54,11 +54,13 @@ de:
         additional_languages: weitere Sprachen
         advertising: Werbung
         advertisings:
+          _nil: Nicht gesetzt
           none: Nein
           by_members: Ja, durch Mitglieder
           by_anyone: Ja, durch Mitglieder und Dritte
         correspondence_language: Korrespondenzsprache
         correspondence_languages:
+          _nil: Nicht gesetzt
           de: Deutsch
           fr: Französisch
           it: Italienisch
