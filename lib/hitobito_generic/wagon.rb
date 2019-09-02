@@ -17,7 +17,10 @@ module HitobitoGeneric
 
     config.to_prepare do
       # extend application classes here
-      Group.send :include, Group::Generic
+      Group.send  :include, Group::Generic
+      Person.send :include, Generic::Person
+
+      PeopleController.send :include, Generic::PeopleController
     end
 
     initializer 'hitobito_generic.add_settings' do |_app|

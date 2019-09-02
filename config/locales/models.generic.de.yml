@@ -48,3 +48,20 @@ de:
       role/board_secretary: Sekretär(in)
       role/board_member: Vorstandsmitglied
       role/treasurer: Kassier
+
+    attributes:
+      person:
+        additional_languages: weitere Sprachen
+        advertising: Werbung
+        advertisings:
+          none: Nein
+          by_members: Ja, durch Mitglieder
+          by_anyone: Ja, durch Mitglieder und Dritte
+        correspondence_language: Korrespondenzsprache
+        correspondence_languages:
+          de: Deutsch
+          fr: Französisch
+          it: Italienisch
+          en: Englisch
+        nationality: Nationalität
+        title: Titel
