@@ -8,6 +8,10 @@ doc/rdoc
 .idea
 .rakeTasks
 
+# local setup
+.envrc
+.tool-versions
+
 # ignore Gemfile.lock for wagons
 Gemfile.lock
 
