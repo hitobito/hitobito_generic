@@ -1,6 +1,6 @@
 language: ruby
 cache: bundler
-diste: xenial
+dist: xenial
 services:
   - mysql
 branches:
@@ -15,7 +15,6 @@ env:
     - RAILS_ENV=development
 rvm:
   - 2.2.3
-  - 2.3.1
   - 2.4.0
 matrix:
   allow_failures:
