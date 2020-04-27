@@ -1,45 +1,34 @@
-#  Copyright (c) 2012-2013, Puzzle ITC GmbH. This file is part of
-#  hitobito_generic and licensed under the Affero General Public License version 3
-#  or later. See the COPYING file at the top-level directory or at
-#  https://github.com/hitobito/hitobito_generic.
-
 en:
   activerecord:
     models:
-      group/top_layer: association
       group/region:
         one: "region"
         other: "regions"
       group/local:
-        one: "local group"
+        one: "local"
         other: "local groups"
       group/board:
-        one: board
-        other: boards
+        one: Executive
+        other: Executives
       group/contacts:
-        one: contacts
+        one: contact
         other: contacts
       group/members:
-        one: members
+        one: member
         other: members
       group/office:
         one: office
         other: offices
-      group/committee:
-        one: "Committee"
-        other: "Committees"
-      group/top_layer/administrator: administrator
-
-      role/address_manager: address manager
-      role/contact: contact
-      role/committee_leader: leader
-      role/committee_member: member
-      role/active_member: active member
-      role/passive_member: passive member
-      role/office_manager: leader
-      role/office_staff: member
-      role/leader: leader
-      role/board_president: president
-      role/board_vice_president: vice-president
-      role/board_secretary: secretary
-      role/board_member: member
+      group/top_layer/administrator: Administrator
+      role/contact: Contact
+      role/committee_leader: Leader
+      role/committee_member: Member
+      role/active_member: Active Member
+      role/passive_member: Passive Member
+      role/office_manager: Leader
+      role/office_staff: Member
+      role/leader: Leader
+      role/board_president: President
+      role/board_vice_president: Vicepresident
+      role/board_secretary: Secretary
+      role/board_member: Board Member
