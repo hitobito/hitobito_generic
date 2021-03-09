@@ -1,6 +1,7 @@
 en:
   activerecord:
     models:
+      group/top_layer: Top Layer
       group/region:
         one: "region"
         other: "regions"
@@ -19,7 +20,14 @@ en:
       group/office:
         one: office
         other: offices
+      group/committee:
+        one: "Commitee"
+        other: "Commitees"
       group/top_layer/administrator: Administrator
+      group/region/administrator: Administrator
+      group/local/main_leader: Primary Leader
+      group/local/address_manager: Address administration
+      role/address_manager: Address administration
       role/contact: Contact
       role/committee_leader: Leader
       role/committee_member: Member
@@ -32,3 +40,22 @@ en:
       role/board_vice_president: Vicepresident
       role/board_secretary: Secretary
       role/board_member: Board Member
+      role/treasurer: Treasurer
+    attributes:
+      person:
+        additional_languages: additional languages
+        advertising: advertising
+        advertisings:
+          _nil: not set
+          none: none
+          by_members: yes, by members
+          by_anyone: yes, by anyone
+        correspondence_language: correspondence language
+        correspondence_languages:
+          _nil: not set
+          de: german
+          fr: french
+          it: italian
+          en: english
+        nationality: nationality
+        title: title
