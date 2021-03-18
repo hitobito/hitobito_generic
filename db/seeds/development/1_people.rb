@@ -48,6 +48,8 @@ devs.each do |name, email|
   seeder.seed_developer(name, email, root, Group::TopLayer::Administrator)
 end
 
+seeder.assign_role_to_root(Group.root, Group::TopLayer::Administrator)
+
 gs = Group.find_by_name('Region Bern').children.where(type: Group::RegionBoard.sti_name).first
 seeder.encrypted_password = BCrypt::Password.create("demo", cost: 1)
 seeder.seed_demo_person('admin@hitobito.ch', root, Group::TopLayer::Administrator)
