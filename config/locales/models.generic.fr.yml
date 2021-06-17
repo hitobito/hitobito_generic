@@ -1,1 +1,61 @@
-fr: {}
+fr:
+  activerecord:
+    models:
+      group/top_layer: Niveau principal
+      group/region:
+        one: "Région"
+        other: "Régions"
+      group/local:
+        one: "Groupe local"
+        other: "Groupes locaux"
+      group/board:
+        one: Conseil d'administration
+        other: Conseils d'administration
+      group/contacts:
+        one: Contact
+        other: Contacts
+      group/members:
+        one: Membre
+        other: Membres
+      group/office:
+        one: Bureau
+        other: Bureaux
+      group/committee:
+        one: "Comité"
+        other: "Comités"
+      group/top_layer/administrator: Administrateur
+      group/region/administrator: Administrateur
+      group/local/main_leader: Gestion principale
+      group/local/address_manager: Gestion des adresses
+      role/address_manager: Gestion des adresses
+      role/contact: Contact
+      role/committee_leader: Gestion
+      role/committee_member: Membre
+      role/active_member: Membre activ
+      role/passive_member: Membre passiv
+      role/office_manager: Gestion
+      role/office_staff: Membre
+      role/leader: Gestion
+      role/board_president: Président/e
+      role/board_vice_president: Vice-président/e
+      role/board_secretary: Secrétariat
+      role/board_member: Membre du conseil d'administration
+      role/treasurer: Trésorier
+    attributes:
+      person:
+        additional_languages: Autres langues
+        advertising: Publicité
+        advertisings:
+          _nil: Non défini
+          none: Non
+          by_members: Oui, par membres
+          by_anyone: Oui, par membres et autres
+        correspondence_language: Langue de correspondance
+        correspondence_languages:
+          _nil: Non défini
+          de: Allemand
+          fr: Français
+          it: Italien
+          en: Anglais
+        nationality: Nationalité
+        title: Titre
