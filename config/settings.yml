@@ -4,6 +4,17 @@
 #  https://github.com/hitobito/hitobito_generic.
 
 application:
+  name: hitobito  # set same name in email.sender and email.mass_recipient
+  logo:
+    image: logo_customer.svg # put under app/assets/images
+    height: 112 # pixel, has to bet set as the logo is a background image,
+    width: 283 # pixel, will also set the minimal width of the navigation
+    background_color: none # optional backgroundcolor, creates a box around the logo, if changed from 'none'
+  footer:
+    #logo_image: logo_hitobito.png
+    logo_url: http://puzzle.ch
+    links: {}
+
   # The languages available in the menu
   languages:
     de: Deutsch

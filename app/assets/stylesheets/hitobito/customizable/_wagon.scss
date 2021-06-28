@@ -1,0 +1,14 @@
+#page-header, .is-logged-out #page-header {
+  a {
+    color: $grayDark;
+
+    &:hover {
+      color: $gray;
+    }
+
+  }
+}
+
+.is-logged-out #page {
+  padding-top: 8rem;
+}
