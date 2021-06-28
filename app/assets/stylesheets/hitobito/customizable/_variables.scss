@@ -1,0 +1,111 @@
+//  Copyright (c) 2021, Die Mitte. This file is part of
+//  hitobito_sww and licensed under the Affero General Public License version 3
+//  or later. See the COPYING file at the top-level directory or at
+//  https://github.com/hitobito/hitobito_sww.
+
+$sww_yellow: #f9c300;
+$sww_red: #da0719;
+
+$sww_color_a:     $sww_yellow;
+$sww_color_b:     lighten($sww_color_a, 10%);
+$sww_color_c:     lighten($sww_color_a, 10%);
+$sww_color_d:     lighten($sww_color_a, 10%);
+$sww_color_e:     lighten($sww_color_a, 10%);
+$sww_color_f:     $sww_red;
+
+$sww_color_dark:  darken($sww_color_a, 2%);
+
+/* Bootstrap variable definition here */
+
+// GLOBAL VALUES
+// --------------------------------------------------
+
+// Grays
+// -------------------------
+$black:                 #474E5D !default;
+$grayDarker:            #797E89 !default;
+$grayDark:              #8b8b8b !default;
+$gray:                  #979CA6 !default;
+$grayLight:             #E8EBF0 !default;
+$grayLighter:           #F8F9FA !default;
+$white:                 #fff !default;
+
+// Colors
+// ----------------------------
+$blue:                  $sww_color_dark !default;
+$blueDark:              darken($blue, 10%) !default;
+$green:                 #8DB850 !default;
+$greenDark:             darken($green, 10%) !default;
+
+$orange:                lighten($sww_color_b, 10%) !default;
+$orangeDark:            $sww_color_b;
+$purple:                $sww_color_c;
+$purpleDark:            darken($sww_color_c, 10%) !default;
+
+$red:                   $orange !default;
+
+$textColor:             $sww_color_f !default;
+$borderColor:           $grayLight !default;
+
+$pageBackground:        $grayLight;
+$contentBackground:     $grayLight;
+
+$pageBackground:        $sww_color_b;
+$footerBackground:      $sww_color_a;
+
+$bodyBackground:        $footerBackground !default;
+
+$focusColor:            $sww_color_c;
+$shadowColor:           darken($pageBackground, 10%);
+$linkColor:             $grayDarker !default;
+$linkColorHover:        $gray !default;
+
+$footerColor:           $white;
+$footerColorHover:      $grayLight;
+
+$tableColorHover:       lighten($purple, 50%);
+
+// Typography
+// -------------------------
+$sansFontFamily:        Helvetica, Arial, sans-serif !default;
+$headingFontFamily:     $sansFontFamily !default;
+$baseFontFamily:        $sansFontFamily !default;
+$headingsFontWeight:    normal !default; // instead of browser default, bold
+
+// Decoration
+// -------------------------
+$borderRadius:           6px;
+
+// Rhythm
+// -------------------------
+$vSpace:                24px;
+
+
+// FLUID GRID
+// --------------------------------------------------
+
+// Default
+// -------------------------
+$fluidGridColumnWidth:         6.382978723% !default;
+$fluidGridGutterWidth:         2.127659574% !default;
+
+// Portrait tablet to default desktop
+// -------------------------
+$fluidGridColumnWidthTablet:   5.801104972% !default;
+$fluidGridGutterWidthTablet:   2.762430939% !default;
+
+// Large desktop and up
+// -------------------------
+$fluidGridColumnWidthLarge:    5.982905983% !default;
+$fluidGridGutterWidthLarge:    2.564102564% !default;
+
+
+// RESPONSIVE DESIGN
+// --------------------------------------------------
+
+// Media widths
+// -------------------------
+$mediaPhone:              480px !default;
+$mediaTablet:             768px !default;
+$mediaDesktop:            980px !default;
+$mediaLarge:              1200px !default; // and upper

@@ -1,0 +1,14 @@
+header.logo {
+  background: lighten($sww_color_a, 30%);
+}
+
+#page-header {
+  a {
+    color: $grayDark;
+
+    &:hover {
+      color: $gray;
+    }
+
+  }
+}
