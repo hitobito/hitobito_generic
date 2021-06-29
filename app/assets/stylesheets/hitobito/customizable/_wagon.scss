@@ -1,4 +1,4 @@
-#page-header {
+#page-header, .is-logged-out #page-header {
   a {
     color: $grayDark;
 
@@ -7,4 +7,8 @@
     }
 
   }
+}
+
+.is-logged-out #page {
+  padding-top: 8rem;
 }
