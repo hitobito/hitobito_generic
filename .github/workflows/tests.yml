@@ -1,6 +1,10 @@
 name: 'Rails Lint and Test'
 
 on:
+  # The nightly build allows us to notice if changes to the core
+  # break the wagon.
+  schedule: 
+  - cron:  '38 3 * * *'
   push:
     paths-ignore:
       - 'doc/**'
