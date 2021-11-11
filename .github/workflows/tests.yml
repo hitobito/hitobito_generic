@@ -15,6 +15,6 @@ on:
       - '**.md'
 jobs:
   wagon_tests:
-    uses: hitobito/hitobito/.github/workflows/wagon-tests.yml
+    uses: hitobito/hitobito/.github/workflows/wagon-tests.yml@master
     with:
       wagon_repository: ${{ github.event.repository.name }}
