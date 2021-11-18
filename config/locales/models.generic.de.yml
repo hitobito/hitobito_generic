@@ -28,8 +28,8 @@ de:
       group/committee:
         one: "Gremium/Projektgruppe"
         other: "Gremien/Projektgruppen"
-      group/top_layer/administrator: Administrator
-      group/region/administrator: Administrator
+      group/top_layer/administrator: Administrator*in
+      group/region/administrator: Administrator*in
       group/local/main_leader: Hauptleitung
       group/local/address_manager: Adressverwaltung
 
@@ -43,11 +43,11 @@ de:
       role/office_manager: Leitung
       role/office_staff: Mitglied
       role/leader: Leitung
-      role/board_president: Präsident
-      role/board_vice_president: Vizepräsident
-      role/board_secretary: Sekretär(in)
+      role/board_president: Präsident*in
+      role/board_vice_president: Vizepräsident*in
+      role/board_secretary: Sekretär*in
       role/board_member: Vorstandsmitglied
-      role/treasurer: Kassier
+      role/treasurer: Kassier*in
 
     attributes:
       person:
