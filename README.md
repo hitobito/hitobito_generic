@@ -1,18 +1,18 @@
-== Hitobito Generic
+# Hitobito Generic
 
 
 This hitobito wagon defines a basic generic organization hierarchy.
 
 
-=== Organization Hierarchy
+## Organization Hierarchy
 
 * Hauptebene
   * Hauptebene
-    * Administrator: [:admin, :layer_and_below_full]
+    * Administrator*in: [:admin, :layer_and_below_full]
   * Vorstand
-    * Präsident: [:layer_full, :contact_data]
-    * Vizepräsident: [:layer_full, :contact_data]
-    * Sekretär(in): [:layer_full, :contact_data]
+    * Präsident*in: [:layer_full, :contact_data]
+    * Vizepräsident*in: [:layer_full, :contact_data]
+    * Sekretär*in: [:layer_full, :contact_data]
     * Vorstandsmitglied: [:layer_full, :contact_data]
   * Geschäftsstelle
     * Leitung: [:layer_and_below_full, :admin, :contact_data, :approve_applications]
@@ -27,9 +27,9 @@ This hitobito wagon defines a basic generic organization hierarchy.
     * Kontakt: []
 * Region/Kanton
   * Vorstand
-    * Präsident: [:layer_full, :contact_data]
-    * Vizepräsident: [:layer_full, :contact_data]
-    * Sekretär(in): [:layer_full, :contact_data]
+    * Präsident*in: [:layer_full, :contact_data]
+    * Vizepräsident*in: [:layer_full, :contact_data]
+    * Sekretär*in: [:layer_full, :contact_data]
     * Vorstandsmitglied: [:layer_full, :contact_data]
   * Geschäftsstelle
     * Leitung: [:layer_and_below_full, :admin, :contact_data, :approve_applications]
@@ -49,9 +49,9 @@ This hitobito wagon defines a basic generic organization hierarchy.
     * Leitung: [:group_and_below_full, :contact_data]
     * Aktivmitglied: [:group_and_below_read]
   * Vorstand
-    * Präsident: [:layer_full, :contact_data]
-    * Vizepräsident: [:layer_full, :contact_data]
-    * Sekretär(in): [:layer_full, :contact_data]
+    * Präsident*in: [:layer_full, :contact_data]
+    * Vizepräsident*in: [:layer_full, :contact_data]
+    * Sekretär*in: [:layer_full, :contact_data]
     * Vorstandsmitglied: [:layer_full, :contact_data]
   * Geschäftsstelle
     * Leitung: [:layer_and_below_full, :admin, :contact_data, :approve_applications]
