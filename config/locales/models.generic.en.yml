@@ -23,8 +23,6 @@ en:
       group/committee:
         one: "Commitee"
         other: "Commitees"
-      group/top_layer/administrator: Administrator
-      group/region/administrator: Administrator
       group/local/main_leader: Primary Leader
       group/local/address_manager: Address administration
       role/address_manager: Address administration
@@ -36,11 +34,7 @@ en:
       role/office_manager: Leader
       role/office_staff: Member
       role/leader: Leader
-      role/board_president: President
-      role/board_vice_president: Vicepresident
-      role/board_secretary: Secretary
       role/board_member: Board Member
-      role/treasurer: Treasurer
     attributes:
       person:
         additional_languages: additional languages
