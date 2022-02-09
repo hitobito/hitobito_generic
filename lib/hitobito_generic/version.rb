@@ -6,5 +6,5 @@
 #  https://github.com/hitobito/hitobito_generic.
 
 module HitobitoGeneric
-  VERSION = '1.27.0'
+  VERSION = '1.27.2'
 end
