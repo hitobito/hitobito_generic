@@ -16,7 +16,7 @@
                           data: { provide: :typeahead, source: @languages }
 
   = f.labeled(:correspondence_language) do
-    - Person::LANGUAGES.each do |key|
+    - Person::CORRESPONDENCE_LANGUAGES.each do |key|
       = f.inline_radio_button(:correspondence_language, key, entry.correspondence_language_label(key))
 
   = f.labeled(:advertising) do

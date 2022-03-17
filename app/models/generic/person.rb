@@ -11,11 +11,11 @@ module Generic::Person
   included do
     Person::PUBLIC_ATTRS += [:title, :correspondence_language, :additional_languages, :advertising]
 
-    LANGUAGES = %w(de fr it en).freeze
+    CORRESPONDENCE_LANGUAGES = %w(de fr it en).freeze
     ADVERTISINGS = %w(none by_members by_anyone).freeze
 
-    i18n_enum :correspondence_language, LANGUAGES
-    i18n_setter :correspondence_language, LANGUAGES
+    i18n_enum :correspondence_language, CORRESPONDENCE_LANGUAGES
+    i18n_setter :correspondence_language, CORRESPONDENCE_LANGUAGES
 
     i18n_enum :advertising, ADVERTISINGS
     i18n_setter :advertising, ADVERTISINGS
