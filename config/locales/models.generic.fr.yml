@@ -4,24 +4,31 @@ fr:
       group/top_layer: Niveau principal
       group/region:
         one: "Région"
+        many: "Régions"
         other: "Régions"
       group/local:
         one: "Groupe local"
+        many: "Groupes locaux"
         other: "Groupes locaux"
       group/board:
         one: Conseil d'administration
+        many: Conseils d'administration
         other: Conseils d'administration
       group/contacts:
         one: Contact
+        many: Contacts
         other: Contacts
       group/members:
         one: Membre
+        many: Membres
         other: Membres
       group/office:
         one: Bureau
+        many: Bureaux
         other: Bureaux
       group/committee:
         one: "Comité"
+        many: "Comités"
         other: "Comités"
       group/local/main_leader: Gestion principale
       group/local/address_manager: Gestion des adresses
