@@ -23,12 +23,11 @@ CustomContent::Translation.seed(:custom_content_id, :locale,
 <ul>\
   <li>admin@hitobito.ch (Passwort: demo) - Administrator mit vollem Zugriff</li>\
   <li>leitung@hitobito.ch (Passwort: demo) - Rolle Leitung einer lokalen Gruppe</li>\
-  <li> mitglied@hitobito.ch (Passwort: demo) - Einfaches Gruppenmitglied</li>\
+  <li>mitglied@hitobito.ch (Passwort: demo) - Einfaches Gruppenmitglied</li>\
 </ul\>
 <br/>\
 <p>\
-    Die Demo-Daten werden jeden Abend neu eingespielt. Falls du Probleme mit dem Login hast,\
-    wende dich an André Kunz (<a href='mailto:kunz@puzzle.ch'>kunz@puzzle.ch</a>).\
+    Die Demo-Daten werden jeden Abend neu eingespielt.\
 </p>\
 <p>Bei Fragen wende dich an <a href='mailto:hitobito@puzzle.ch'>hitobito@puzzle.ch</a>.</p>" },
 
@@ -40,12 +39,11 @@ CustomContent::Translation.seed(:custom_content_id, :locale,
 <ul>\
   <li>admin@hitobito.ch (mot de passe: demo) - administrateur avec access complet</li>\
   <li>leitung@hitobito.ch (mot de passe: demo) - rôle responsable d'une groupe locale</li>\
-  <li> mitglied@hitobito.ch (mot de passe: demo) - membre d'une groupe</li>\
+  <li>mitglied@hitobito.ch (mot de passe: demo) - membre d'une groupe</li>\
 </ul\>
 <br/>\
 <p>\
-  Les dates démo sont remis tous les soirs. Si tu as des problèmes avec l'inscription,
-  n'hésite pas à contacter André Kunz (<a href='mailto:kunz@puzzle.ch'>kunz@puzzle.ch</a>).\
+  Les dates démo sont remis tous les soirs.\
 </p>\
 <p>En cas de questions tu peux écrire à <a href='mailto:hitobito@puzzle.ch'>hitobito@puzzle.ch</a>.</p>"},
 
@@ -57,13 +55,12 @@ CustomContent::Translation.seed(:custom_content_id, :locale,
 <ul>\
   <li>admin@hitobito.ch (password: demo) - administrator with full access</li>\
   <li>leitung@hitobito.ch (password: demo) - leader of a local group</li>\
-  <li> mitglied@hitobito.ch (password: demo) - simple group member</li>\
+  <li>mitglied@hitobito.ch (password: demo) - simple group member</li>\
 </ul\>
 <br/>\
 <p>\
-  The demo data is reset every night. If you have problems with the login,
-  please contact André Kunz (<a href='mailto:kunz@puzzle.ch'>kunz@puzzle.ch</a>).\
+  The demo data is reset every night.\
 </p>\
-<p>In the case of other questions please write to <a href='mailto:hitobito@puzzle.ch'>hitobito@puzzle.ch</a>.</p>"}
+<p>In the case of questions please write to <a href='mailto:hitobito@puzzle.ch'>hitobito@puzzle.ch</a>.</p>"}
 
 )
