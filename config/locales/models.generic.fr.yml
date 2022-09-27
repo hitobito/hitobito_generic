@@ -30,6 +30,8 @@ fr:
         one: "Comité"
         many: "Comités"
         other: "Comités"
+      group/top_layer/administrator: Administrateur
+      group/region/administrator: Administrateur
       group/local/main_leader: Gestion principale
       group/local/address_manager: Gestion des adresses
       role/address_manager: Gestion des adresses
@@ -41,7 +43,11 @@ fr:
       role/office_manager: Gestion
       role/office_staff: Membre
       role/leader: Gestion
+      role/board_president: Président/e
+      role/board_vice_president: Vice-président/e
+      role/board_secretary: Secrétariat
       role/board_member: Membre du conseil d'administration
+      role/treasurer: Trésorier
     attributes:
       person:
         additional_languages: Autres langues
