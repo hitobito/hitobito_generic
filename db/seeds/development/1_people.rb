@@ -22,16 +22,21 @@ class GenericPersonSeeder < PersonSeeder
     p = Person.seed(:email, attrs).first
     seed_accounts(p, false)
     seed_role(p, group, role_type)
+
+    p
   end
 end
 
 
-puzzlers = ['Pascal Zumkehr',
-            'Pascal Simon',
-            'Andreas Maierhofer',
-            'Matthias Viehweger',
-            'Olivier Brian',
-            'Carlo Beltrame']
+puzzlers = [
+  'Andreas Maierhofer',
+  'Carlo Beltrame',
+  'Matthias Viehweger',
+  'Nils Rauch',
+  'Olivier Brian',
+  'Pascal Simon',
+  'Pascal Zumkehr',
+]
 devs = {'Somebody' => 'some@email.example.com'}
 
 puzzlers.each do |puz|
@@ -52,6 +57,9 @@ seeder.assign_role_to_root(Group.root, Group::TopLayer::Administrator)
 
 gs = Group.find_by_name('Region Bern').children.where(type: Group::RegionBoard.sti_name).first
 seeder.encrypted_password = BCrypt::Password.create("demo", cost: 1)
-seeder.seed_demo_person('admin@hitobito.ch', root, Group::TopLayer::Administrator)
+
+admin = seeder.seed_demo_person('admin@hitobito.ch', root, Group::TopLayer::Administrator)
+seeder.seed_role(admin, gs, Group::TopLayerOffice::Treasurer)
+
 seeder.seed_demo_person('leitung@hitobito.ch', gs, Group::RegionBoard::President)
 seeder.seed_demo_person('mitglied@hitobito.ch', Group.find_by_name('Verein Bern Stadt'), Group::Local::ActiveMember)
