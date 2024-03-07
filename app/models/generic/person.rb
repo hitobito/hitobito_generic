@@ -9,7 +9,8 @@ module Generic::Person
   extend ActiveSupport::Concern
 
   included do
-    Person::PUBLIC_ATTRS << :title << :correspondence_language << :additional_languages << :advertising
+    Person::PUBLIC_ATTRS << :title << :correspondence_language <<
+                            :additional_languages << :advertising
 
     CORRESPONDENCE_LANGUAGES = %w(de fr it en).freeze
     ADVERTISINGS = %w(none by_members by_anyone).freeze
