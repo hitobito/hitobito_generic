@@ -6,9 +6,6 @@
 - #  https://github.com/hitobito/hitobito_generic.
 
 = field_set_tag do
-  = f.labeled_input_field :title,
-                          data: { provide: :typeahead, source: @titles }
-
   = f.labeled_input_field :nationality,
                           data: { provide: :typeahead, source: @nationalities }
 
