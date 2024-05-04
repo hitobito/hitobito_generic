@@ -7,7 +7,7 @@
 
 class AddPersonFields < ActiveRecord::Migration[4.2]
   def change
-    add_column(:people, :title, :string)
+    add_column(:people, :title, :string) unless column_exists?(:people, :title) 
     add_column(:people, :nationality, :string)
     add_column(:people, :correspondence_language, :string)
     add_column(:people, :additional_languages, :string)
