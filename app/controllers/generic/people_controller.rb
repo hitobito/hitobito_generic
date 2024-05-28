@@ -15,7 +15,6 @@ module Generic::PeopleController
     self.permitted_attrs += [
       :additional_languages,
       :advertising,
-      :correspondence_language,
       :nationality,
       :title
     ]

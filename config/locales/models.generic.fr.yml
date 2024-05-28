@@ -57,12 +57,5 @@ fr:
           none: Non
           by_members: Oui, par membres
           by_anyone: Oui, par membres et autres
-        correspondence_language: Langue de correspondance
-        correspondence_languages:
-          _nil: Non défini
-          de: Allemand
-          fr: Français
-          it: Italien
-          en: Anglais
         nationality: Nationalité
         title: Titre

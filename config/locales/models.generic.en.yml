@@ -50,12 +50,5 @@ en:
           none: none
           by_members: yes, by members
           by_anyone: yes, by anyone
-        correspondence_language: correspondence language
-        correspondence_languages:
-          _nil: not set
-          de: german
-          fr: french
-          it: italian
-          en: english
         nationality: nationality
         title: title
