@@ -15,10 +15,6 @@
   = f.labeled_input_field :additional_languages,
                           data: { provide: :typeahead, source: @languages }
 
-  = f.labeled(:correspondence_language) do
-    - Person::CORRESPONDENCE_LANGUAGES.each do |key|
-      = f.inline_radio_button(:correspondence_language, key, entry.correspondence_language_label(key))
-
   = f.labeled(:advertising) do
     - Person::ADVERTISINGS.each do |key|
       = f.inline_radio_button(:advertising, key, entry.advertising_label(key))

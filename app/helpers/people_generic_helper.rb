@@ -6,10 +6,6 @@
 #  https://github.com/hitobito/hitobito_generic.
 
 module PeopleGenericHelper
-  def format_person_correspondence_language(person)
-    person.correspondence_language_label
-  end
-
   def format_person_advertising(person)
     person.advertising_label
   end

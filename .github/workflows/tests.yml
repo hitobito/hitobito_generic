@@ -1,7 +1,7 @@
 name: 'Lint and test'
 
 on:
-  # The nightly obuild allows us to notice if changes to the core
+  # The nightly build allows us to notice if changes to the core
   # break the wagon.
   schedule:
   - cron:  '38 3 * * *'
