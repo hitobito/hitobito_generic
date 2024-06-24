@@ -14,6 +14,7 @@ class Group::LocalOffice < Group::Office
   end
 
   class Treasurer < Role::Treasurer
+    self.permissions = [:layer_and_below_full, :contact_data, :finance]
   end
 
 
