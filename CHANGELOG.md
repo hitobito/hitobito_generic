@@ -1,6 +1,6 @@
 # Hitobito Changelog
 
-## unreleased
+## Version 2.2
 
 * Wechsel von Korrespondenzsprache als Wagon-Attribut zum Core-Attribut Sprache (hitobito#2620)
 
