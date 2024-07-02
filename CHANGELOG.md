@@ -3,6 +3,7 @@
 ## Version 2.2
 
 * Wechsel von Korrespondenzsprache als Wagon-Attribut zum Core-Attribut Sprache (hitobito#2620)
+* New treasurer role (hitobito_generic#19)
 
 ## Version 1.11
 
