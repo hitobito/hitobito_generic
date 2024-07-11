@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 #  Copyright (c) 2012-2019, Puzzle ITC GmbH. This file is part of
 #  hitobito_generic and licensed under the Affero General Public License version 3
 #  or later. See the COPYING file at the top-level directory or at
@@ -23,10 +21,10 @@ module Generic::PeopleController
   private
 
   def load_titles
-    @titles = (Person.pluck(:title).compact + %w(Dr Msc)).uniq.sort
+    @titles = (Person.pluck(:title).compact + %w[Dr Msc]).uniq.sort
   end
 
   def load_nationalities
-    @nationalities = (Person.pluck(:nationality).compact + %w(Schweiz Deutschland)).uniq.sort
+    @nationalities = (Person.pluck(:nationality).compact + %w[Schweiz Deutschland]).uniq.sort
   end
 end
