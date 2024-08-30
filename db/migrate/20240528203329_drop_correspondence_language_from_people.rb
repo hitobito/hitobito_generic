@@ -8,10 +8,10 @@
 class DropCorrespondenceLanguageFromPeople < ActiveRecord::Migration[6.1]
   def change
     reversible do |dir|
-      dir.up { execute("UPDATE people SET language = IFNULL(correspondence_language, 'de')") }
+      dir.up { execute("UPDATE people SET language = COALESCE(correspondence_language, 'de')") }
       dir.down { execute("UPDATE people SET correspondence_language = language") }
     end
 
-    remove_column(:people, :correspondence_language, :string)
+    remove_column :people, :correspondence_language, :string
   end
 end
