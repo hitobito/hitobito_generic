@@ -14,6 +14,6 @@ class Group::TopLayerOffice < Group::Office
     self.permissions = [:layer_and_below_full, :contact_data, :finance]
   end
 
-  self.default_role = Staff
+  self.standard_role = Staff
   roles Manager, Treasurer, Staff
 end

@@ -26,6 +26,6 @@ class Group::Local < Group
     self.permissions = [:group_and_below_read]
   end
 
-  self.default_role = ActiveMember
+  self.standard_role = ActiveMember
   roles MainLeader, AddressManager, Leader, ActiveMember
 end
