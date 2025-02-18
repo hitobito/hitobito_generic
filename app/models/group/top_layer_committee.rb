@@ -12,6 +12,6 @@ class Group::TopLayerCommittee < Group::Committee
   class Member < Role::CommitteeMember
   end
 
-  self.default_role = Member
+  self.standard_role = Member
   roles Leader, Member
 end

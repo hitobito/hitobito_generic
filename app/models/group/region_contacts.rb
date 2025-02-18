@@ -13,6 +13,6 @@ class Group::RegionContacts < Group::Contacts
   class AddressManager < Role::AddressManager
   end
 
-  self.default_role = Contact
+  self.standard_role = Contact
   roles AddressManager, Contact
 end

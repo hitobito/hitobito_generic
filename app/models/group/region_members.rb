@@ -15,6 +15,6 @@ class Group::RegionMembers < Group::Members
   class AddressManager < Role::AddressManager
   end
 
-  self.default_role = ActiveMember
+  self.standard_role = ActiveMember
   roles AddressManager, ActiveMember, PassiveMember
 end

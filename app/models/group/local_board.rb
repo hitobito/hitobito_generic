@@ -19,6 +19,6 @@ class Group::LocalBoard < Group::Board
   class Member < Role::BoardMember
   end
 
-  self.default_role = Member
+  self.standard_role = Member
   roles President, VicePresident, Secretary, Treasurer, Member
 end

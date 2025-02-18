@@ -19,6 +19,6 @@ class Group::TopLayerBoard < Group::Board
   class Treasurer < Role::Treasurer
   end
 
-  self.default_role = Member
+  self.standard_role = Member
   roles President, VicePresident, Secretary, Treasurer, Member
 end
