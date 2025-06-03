@@ -60,3 +60,7 @@ de:
           by_anyone: Ja, durch Mitglieder und Dritte
         nationality: Nationalität
         title: Titel
+
+  fixed_fees:
+    membership:
+      members: Mitglieder
