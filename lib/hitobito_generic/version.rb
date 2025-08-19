@@ -4,5 +4,5 @@
 #  https://github.com/hitobito/hitobito_generic.
 
 module HitobitoGeneric
-  VERSION = "2.6.6"
+  VERSION = "2.6.6-people-filter"
 end
