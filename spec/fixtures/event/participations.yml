@@ -5,21 +5,25 @@
 
 top_leader:
   event: top_course
-  person: board_leader
+  participant: board_leader
+  participant_type: Person
   active: true
 
 top_participant:
   event: top_course
-  person: basic_leader
+  participant: basic_leader
+  participant_type: Person
   active: true
   application: top_participant
 
 camp_leader:
   event: top_event
-  person: basic_leader
+  participant: basic_leader
+  participant_type: Person
   active: true
 
 camp_participant:
   event: top_event
-  person: basic_member
+  participant: basic_member
+  participant_type: Person
   active: true
