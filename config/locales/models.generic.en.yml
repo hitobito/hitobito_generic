@@ -52,3 +52,5 @@ en:
           by_anyone: yes, by anyone
         nationality: nationality
         title: title
+
+  new_attribute: "attributes can be edited through the file in the repo"
