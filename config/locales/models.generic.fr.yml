@@ -1,3 +1,8 @@
+#  Copyright (c) 2012-2013, Puzzle ITC GmbH. This file is part of
+#  hitobito_generic and licensed under the Affero General Public License version 3
+#  or later. See the COPYING file at the top-level directory or at
+#  https://github.com/hitobito/hitobito_generic.
+
 fr:
   activerecord:
     models:
@@ -34,6 +39,8 @@ fr:
       group/region/administrator: Administrateur
       group/local/main_leader: Gestion principale
       group/local/address_manager: Gestion des adresses
+
+
       role/address_manager: Gestion des adresses
       role/contact: Contact
       role/committee_leader: Gestion
@@ -48,6 +55,7 @@ fr:
       role/board_secretary: Secrétariat
       role/board_member: Membre du conseil d'administration
       role/treasurer: Trésorier
+
     attributes:
       person:
         additional_languages: Autres langues
@@ -55,7 +63,7 @@ fr:
         advertisings:
           _nil: Non défini
           none: Non
-          by_members: Oui, par membres
-          by_anyone: Oui, par membres et autres
+          by_members: "Oui, par membres"
+          by_anyone: "Oui, par membres et autres"
         nationality: Nationalité
         title: Titre
