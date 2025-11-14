@@ -55,7 +55,7 @@ en:
         advertising: advertising
         advertisings:
           _nil: not set
-          none: none
+          none: no
           by_members: "yes, by members"
           by_anyone: "yes, by anyone"
         nationality: nationality
