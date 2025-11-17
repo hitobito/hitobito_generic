@@ -9,6 +9,7 @@ application:
     de: Deutsch
     en: English
     fr: Français
+    it: Italiano
   footer:
     links:
       "Dokumentation": https://hitobito.readthedocs.io
