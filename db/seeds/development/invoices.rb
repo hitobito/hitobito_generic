@@ -50,12 +50,12 @@ def seed_invoice(group, state = :draft, item = random_invoice_item, due_at = Fak
   with_state_specific_attributes(invoice)
 end
 
-def seed_invoice_list(group)
+def seed_invoice_run(group)
   item = random_invoice_item
   due_at = Faker::Date.forward(days: 30)
   invoice = seed_invoice(group, :issued, item, due_at)
 
-  InvoiceList.new(invoice_list_attributes(group, invoice, item, due_at))
+  InvoiceRun.new(invoice_run_attributes(group, invoice, item, due_at))
 end
 
 def invoice_attributes(group, state, item, recipient, due_at)
@@ -71,9 +71,9 @@ def invoice_attributes(group, state, item, recipient, due_at)
   }
 end
 
-def invoice_list_attributes(group, invoice, item, due_at)
+def invoice_run_attributes(group, invoice, item, due_at)
   {
-    title: "Sammelrechnung für #{invoice.invoice_items.first.name}",
+    title: "Rechnungslauf für #{invoice.invoice_items.first.name}",
     group: group,
     invoice: invoice,
     invoices: rand(6..12).times.map { seed_invoice(group, [:issued, :payed].sample, item, due_at) }
@@ -146,8 +146,8 @@ end
   seed_invoice(group, Invoice::STATES.sample).save!
 end
 
-# Seed an InvoiceList
-list = seed_invoice_list(group)
+# Seed an InvoiceRun
+list = seed_invoice_run(group)
 list.save!
 list.update_paid
 list.update_total
