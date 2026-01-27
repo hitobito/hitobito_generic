@@ -42,9 +42,9 @@ INVOICE_ARTICLE_ATTRIBUTES = [
 # HELPER METHODS START
 ######################
 
-def seed_invoice(group, state = :draft, item = random_invoice_item, due_at = Faker::Date.forward(days: 30))
-  recipient = Person.all.sample
-  invoice = Invoice.new(invoice_attributes(group, state, item, recipient, due_at))
+def seed_invoice(group, state = :draft, item = random_invoice_item, due_at = Faker::Date.forward(days: 30), recipient = nil)
+  invoice_recipient = recipient || Person.all.sample
+  invoice = Invoice.new(invoice_attributes(group, state, item, invoice_recipient, due_at))
 
   invoice.validate # Calculate invoice attributes
   with_state_specific_attributes(invoice)
@@ -72,11 +72,14 @@ def invoice_attributes(group, state, item, recipient, due_at)
 end
 
 def invoice_run_attributes(group, invoice, item, due_at)
+  recipients = rand(6..12).times.map { Person.all.sample }
+
   {
     title: "Rechnungslauf für #{invoice.invoice_items.first.name}",
     group: group,
     invoice: invoice,
-    invoices: rand(6..12).times.map { seed_invoice(group, [:issued, :payed].sample, item, due_at) }
+    invoices: recipients.map { seed_invoice(group, [:issued, :payed].sample, item, due_at, _1) },
+    recipient_source: InvoiceRuns::RecipientSourceBuilder.new({ids: recipients.pluck(:id)}, group).recipient_source
   }
 end
 
