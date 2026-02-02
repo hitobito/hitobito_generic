@@ -72,14 +72,14 @@ def invoice_attributes(group, state, item, recipient, due_at)
 end
 
 def invoice_run_attributes(group, invoice, item, due_at)
-  recipients = rand(6..12).times.map { Person.all.sample }
+  recipients = rand(6..12).times.map { Person.all.sample }.select(&:valid?)
 
   {
     title: "Rechnungslauf für #{invoice.invoice_items.first.name}",
     group: group,
     invoice: invoice,
-    invoices: recipients.map { seed_invoice(group, [:issued, :payed].sample, item, due_at, _1) },
-    recipient_source: InvoiceRuns::RecipientSourceBuilder.new({ids: recipients.pluck(:id)}, group).recipient_source
+    invoices: rand(6..12).times.map { seed_invoice(group, [:issued, :payed].sample, item, due_at) },
+    recipient_source: InvoiceRuns::RecipientSourceBuilder.new({ids: recipients.pluck(:id).join(",")}, group).recipient_source
   }
 end
 
@@ -141,12 +141,16 @@ end
 
 # Seed Invoices of every state
 Invoice::STATES.each do |state|
-  seed_invoice(group, state).save!
+  invoice = seed_invoice(group, state)
+  
+  invoice.save! if invoice.valid?
 end
 
 # Seed 5 random invoices
 5.times do
-  seed_invoice(group, Invoice::STATES.sample).save!
+  invoice = seed_invoice(group, Invoice::STATES.sample)
+
+  invoice.save! if invoice.valid?
 end
 
 # Seed an InvoiceRun
