@@ -56,8 +56,8 @@ de:
         advertisings:
           _nil: Nicht gesetzt
           none: Nein
-          by_members: Ja, durch Mitglieder
-          by_anyone: Ja, durch Mitglieder und Dritte
+          by_members: "Ja, durch Mitglieder"
+          by_anyone: "Ja, durch Mitglieder und Dritte"
         nationality: Nationalität
         title: Titel
 
