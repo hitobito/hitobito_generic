@@ -14,3 +14,6 @@ application:
     links:
       "Dokumentation": https://hitobito.readthedocs.io
       "E-Mail an Support": 'mailto:support@hitobito.com'
+
+personal_documents:
+  enabled: true
