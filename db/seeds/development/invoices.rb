@@ -136,7 +136,7 @@ group.invoice_config.update(payee: 'Hitobito AG')
 
 # Seed predefined Articles
 INVOICE_ARTICLE_ATTRIBUTES.each do |attrs|
-  InvoiceArticle.seed_once(:name, :number, attrs.merge(group: group))
+  InvoiceArticle.seed_once(:number, :group_id, attrs.merge(group_id: group.id))
 end
 
 # Seed Invoices of every state
