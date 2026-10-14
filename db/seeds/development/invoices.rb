@@ -132,9 +132,14 @@ group = Group.find_by(name: 'Region Bern')
 
 return unless group
 
-group.invoice_config.update(payee: 'Hitobito AG')
+group.invoice_config.update!(
+  payee_name: 'Hitobito AG',
+  payee_zip_code: '3005',
+  payee_town: 'Bern',
+  iban: 'CH93 0076 2011 6238 5295 7'
+)
 
-# Seed predefined Articles
+# Seed predefined Articlesh
 INVOICE_ARTICLE_ATTRIBUTES.each do |attrs|
   InvoiceArticle.seed_once(:number, :group_id, attrs.merge(group_id: group.id))
 end
@@ -142,7 +147,7 @@ end
 # Seed Invoices of every state
 Invoice::STATES.each do |state|
   invoice = seed_invoice(group, state)
-  
+
   invoice.save! if invoice.valid?
 end
 
