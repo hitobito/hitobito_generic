@@ -139,7 +139,7 @@ group.invoice_config.update!(
   iban: 'CH93 0076 2011 6238 5295 7'
 )
 
-# Seed predefined Articlesh
+# Seed predefined Articles
 INVOICE_ARTICLE_ATTRIBUTES.each do |attrs|
   InvoiceArticle.seed_once(:number, :group_id, attrs.merge(group_id: group.id))
 end
